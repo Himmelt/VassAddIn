@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VassAddIn", "VassAddIn\VassAddIn.csproj", "{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5A19547-6E17-40AE-89CE-8BE4D10DF1A6}
+	EndGlobalSection
+EndGlobal
