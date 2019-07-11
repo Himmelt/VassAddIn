@@ -177,6 +177,9 @@
     <EmbeddedResource Include="VassRibbon.resx">
       <DependentUpon>VassRibbon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VassRibbon.zh.resx">
+      <DependentUpon>VassRibbon.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
