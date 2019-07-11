@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VassRibbon));
             this.tabVassTools = this.Factory.CreateRibbonTab();
             this.groupSymbol = this.Factory.CreateRibbonGroup();
-            this.buttonReadSymbol = this.Factory.CreateRibbonButton();
             this.groupWorkbook = this.Factory.CreateRibbonGroup();
+            this.buttonReadSymbol = this.Factory.CreateRibbonButton();
             this.buttonClean = this.Factory.CreateRibbonButton();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
@@ -53,6 +53,12 @@
             resources.ApplyResources(this.groupSymbol, "groupSymbol");
             this.groupSymbol.Name = "groupSymbol";
             // 
+            // groupWorkbook
+            // 
+            this.groupWorkbook.Items.Add(this.buttonClean);
+            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
+            this.groupWorkbook.Name = "groupWorkbook";
+            // 
             // buttonReadSymbol
             // 
             this.buttonReadSymbol.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -61,12 +67,6 @@
             this.buttonReadSymbol.OfficeImageId = "ImportTextFile";
             this.buttonReadSymbol.ShowImage = true;
             // 
-            // groupWorkbook
-            // 
-            this.groupWorkbook.Items.Add(this.buttonClean);
-            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
-            this.groupWorkbook.Name = "groupWorkbook";
-            // 
             // buttonClean
             // 
             this.buttonClean.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -74,6 +74,7 @@
             this.buttonClean.Name = "buttonClean";
             this.buttonClean.OfficeImageId = "DeleteTable";
             this.buttonClean.ShowImage = true;
+            this.buttonClean.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonClean_Click);
             // 
             // VassRibbon
             // 

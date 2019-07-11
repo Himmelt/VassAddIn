@@ -9,5 +9,9 @@ namespace VassAddIn {
         private void VassRibbon_Load(object sender, RibbonUIEventArgs e) {
 
         }
+
+        private void ButtonClean_Click(object sender, RibbonControlEventArgs e) {
+            Globals.ThisAddIn.ClearWorkBook();
+        }
     }
 }

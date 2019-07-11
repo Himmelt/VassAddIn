@@ -165,9 +165,6 @@
   <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
-    <value>groupWorkbook</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,8 +174,8 @@
   <data name="tabVassTools.Label" xml:space="preserve">
     <value>VassTools</value>
   </data>
-  <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
-    <value>Import Symbols from Symbol Table.</value>
+  <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
+    <value>groupWorkbook</value>
   </data>
   <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -191,6 +188,9 @@
   </data>
   <data name="buttonClean.Label" xml:space="preserve">
     <value>Clean</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;groupSymbol.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -207,8 +207,8 @@
   <data name="&gt;&gt;VassRibbon.OfficeMenu.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;buttonClean.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
+    <value>Import Symbols from Symbol Table.</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

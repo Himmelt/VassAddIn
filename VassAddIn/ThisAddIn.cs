@@ -7,16 +7,24 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 
-namespace VassAddIn
-{
-    public partial class ThisAddIn
-    {
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
-        {
+namespace VassAddIn {
+    public partial class ThisAddIn {
+        private void ThisAddIn_Startup(object sender, System.EventArgs e) {
         }
 
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
-        {
+        private void ThisAddIn_Shutdown(object sender, System.EventArgs e) {
+        }
+
+        public void ClearWorkBook() {
+            Application.DisplayAlerts = false;
+            Excel.Sheets sheets = Application.ActiveWorkbook.Sheets;
+            sheets.Add().Name = "29185D52CD5441A";
+            foreach (dynamic sheet in sheets) {
+                if (!sheet.Name.Equals("29185D52CD5441A")) {
+                    sheets[sheet.Name].Delete();
+                }
+            }
+            sheets[1].Name = "EmptySheet";
         }
 
         #region VSTO 生成的代码
@@ -25,12 +33,11 @@ namespace VassAddIn
         /// 设计器支持所需的方法 - 不要修改
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
-        private void InternalStartup()
-        {
+        private void InternalStartup() {
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }
