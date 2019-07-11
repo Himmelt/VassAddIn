@@ -28,39 +28,76 @@
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent() {
-            this.tab1 = this.Factory.CreateRibbonTab();
-            this.group1 = this.Factory.CreateRibbonGroup();
-            this.tab1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VassRibbon));
+            this.tabVassTools = this.Factory.CreateRibbonTab();
+            this.groupSymbol = this.Factory.CreateRibbonGroup();
+            this.buttonReadSymbol = this.Factory.CreateRibbonButton();
+            this.groupWorkbook = this.Factory.CreateRibbonGroup();
+            this.buttonClean = this.Factory.CreateRibbonButton();
+            this.tabVassTools.SuspendLayout();
+            this.groupSymbol.SuspendLayout();
+            this.groupWorkbook.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tab1
+            // tabVassTools
             // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.Groups.Add(this.group1);
-            this.tab1.Label = "TabAddIns";
-            this.tab1.Name = "tab1";
+            this.tabVassTools.Groups.Add(this.groupSymbol);
+            this.tabVassTools.Groups.Add(this.groupWorkbook);
+            resources.ApplyResources(this.tabVassTools, "tabVassTools");
+            this.tabVassTools.Name = "tabVassTools";
+            this.tabVassTools.Position = this.Factory.RibbonPosition.AfterOfficeId("TabDeveloper");
             // 
-            // group1
+            // groupSymbol
             // 
-            this.group1.Label = "group1";
-            this.group1.Name = "group1";
+            this.groupSymbol.Items.Add(this.buttonReadSymbol);
+            resources.ApplyResources(this.groupSymbol, "groupSymbol");
+            this.groupSymbol.Name = "groupSymbol";
+            // 
+            // buttonReadSymbol
+            // 
+            this.buttonReadSymbol.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonReadSymbol, "buttonReadSymbol");
+            this.buttonReadSymbol.Name = "buttonReadSymbol";
+            this.buttonReadSymbol.OfficeImageId = "ImportTextFile";
+            this.buttonReadSymbol.ShowImage = true;
+            // 
+            // groupWorkbook
+            // 
+            this.groupWorkbook.Items.Add(this.buttonClean);
+            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
+            this.groupWorkbook.Name = "groupWorkbook";
+            // 
+            // buttonClean
+            // 
+            this.buttonClean.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonClean, "buttonClean");
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.OfficeImageId = "DeleteTable";
+            this.buttonClean.ShowImage = true;
             // 
             // VassRibbon
             // 
             this.Name = "VassRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
-            this.Tabs.Add(this.tab1);
+            this.Tabs.Add(this.tabVassTools);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.VassRibbon_Load);
-            this.tab1.ResumeLayout(false);
-            this.tab1.PerformLayout();
+            this.tabVassTools.ResumeLayout(false);
+            this.tabVassTools.PerformLayout();
+            this.groupSymbol.ResumeLayout(false);
+            this.groupSymbol.PerformLayout();
+            this.groupWorkbook.ResumeLayout(false);
+            this.groupWorkbook.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab tabVassTools;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSymbol;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadSymbol;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupWorkbook;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonClean;
     }
 
     partial class ThisRibbonCollection {
