@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VassRibbon));
             this.tabVassTools = this.Factory.CreateRibbonTab();
             this.groupSymbol = this.Factory.CreateRibbonGroup();
-            this.groupWorkbook = this.Factory.CreateRibbonGroup();
             this.buttonReadSymbol = this.Factory.CreateRibbonButton();
+            this.groupWorkbook = this.Factory.CreateRibbonGroup();
             this.buttonClean = this.Factory.CreateRibbonButton();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
@@ -53,12 +53,6 @@
             resources.ApplyResources(this.groupSymbol, "groupSymbol");
             this.groupSymbol.Name = "groupSymbol";
             // 
-            // groupWorkbook
-            // 
-            this.groupWorkbook.Items.Add(this.buttonClean);
-            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
-            this.groupWorkbook.Name = "groupWorkbook";
-            // 
             // buttonReadSymbol
             // 
             this.buttonReadSymbol.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -66,6 +60,13 @@
             this.buttonReadSymbol.Name = "buttonReadSymbol";
             this.buttonReadSymbol.OfficeImageId = "ImportTextFile";
             this.buttonReadSymbol.ShowImage = true;
+            this.buttonReadSymbol.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReadSymbol_Click);
+            // 
+            // groupWorkbook
+            // 
+            this.groupWorkbook.Items.Add(this.buttonClean);
+            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
+            this.groupWorkbook.Name = "groupWorkbook";
             // 
             // buttonClean
             // 
@@ -81,7 +82,6 @@
             this.Name = "VassRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tabVassTools);
-            resources.ApplyResources(this, "$this");
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.VassRibbon_Load);
             this.tabVassTools.ResumeLayout(false);
             this.tabVassTools.PerformLayout();

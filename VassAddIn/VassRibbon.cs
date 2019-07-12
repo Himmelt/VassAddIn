@@ -13,5 +13,9 @@ namespace VassAddIn {
         private void ButtonClean_Click(object sender, RibbonControlEventArgs e) {
             Globals.ThisAddIn.ClearWorkBook();
         }
+
+        private void ButtonReadSymbol_Click(object sender, RibbonControlEventArgs e) {
+
+        }
     }
 }

@@ -117,103 +117,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;groupSymbol.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
-    <value>buttonClean</value>
-  </data>
-  <data name="&gt;&gt;groupSymbol.Name" xml:space="preserve">
-    <value>groupSymbol</value>
-  </data>
   <data name="buttonReadSymbol.Label" xml:space="preserve">
     <value>Import Symbols</value>
-  </data>
-  <data name="buttonClean.ScreenTip" xml:space="preserve">
-    <value>Clean the Workbook.</value>
-  </data>
-  <data name="&gt;&gt;buttonReadSymbol.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="groupWorkbook.Label" xml:space="preserve">
-    <value>Workbook</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>VassRibbon</value>
-  </data>
-  <data name="&gt;&gt;buttonReadSymbol.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;tabVassTools.Name" xml:space="preserve">
-    <value>tabVassTools</value>
-  </data>
-  <data name="&gt;&gt;buttonReadSymbol.Parent" xml:space="preserve">
-    <value>groupSymbol</value>
-  </data>
-  <data name="&gt;&gt;buttonClean.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;groupWorkbook.Parent" xml:space="preserve">
-    <value>tabVassTools</value>
-  </data>
-  <data name="&gt;&gt;groupWorkbook.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.Name" xml:space="preserve">
-    <value>VassRibbon.OfficeMenu</value>
-  </data>
-  <data name="tabVassTools.Label" xml:space="preserve">
-    <value>VassTools</value>
-  </data>
-  <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
-    <value>groupWorkbook</value>
-  </data>
-  <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;buttonReadSymbol.Name" xml:space="preserve">
-    <value>buttonReadSymbol</value>
-  </data>
-  <data name="groupSymbol.Label" xml:space="preserve">
-    <value>Symbol</value>
-  </data>
-  <data name="buttonClean.Label" xml:space="preserve">
-    <value>Clean</value>
-  </data>
-  <data name="&gt;&gt;buttonClean.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupSymbol.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupWorkbook.Name" xml:space="preserve">
-    <value>groupWorkbook</value>
-  </data>
-  <data name="&gt;&gt;groupWorkbook.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupSymbol.Parent" xml:space="preserve">
-    <value>tabVassTools</value>
-  </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
     <value>Import Symbols from Symbol Table.</value>
   </data>
+  <data name="&gt;&gt;buttonReadSymbol.Name" xml:space="preserve">
+    <value>buttonReadSymbol</value>
+  </data>
+  <data name="&gt;&gt;buttonReadSymbol.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonReadSymbol.Parent" xml:space="preserve">
+    <value>groupSymbol</value>
+  </data>
+  <data name="&gt;&gt;buttonReadSymbol.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupSymbol.Label" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="&gt;&gt;groupSymbol.Name" xml:space="preserve">
+    <value>groupSymbol</value>
+  </data>
+  <data name="&gt;&gt;groupSymbol.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupSymbol.Parent" xml:space="preserve">
+    <value>tabVassTools</value>
+  </data>
+  <data name="&gt;&gt;groupSymbol.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonClean.Label" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="buttonClean.ScreenTip" xml:space="preserve">
+    <value>Clean the Workbook.</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
+    <value>buttonClean</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
+    <value>groupWorkbook</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupWorkbook.Label" xml:space="preserve">
+    <value>Workbook</value>
+  </data>
+  <data name="&gt;&gt;groupWorkbook.Name" xml:space="preserve">
+    <value>groupWorkbook</value>
+  </data>
+  <data name="&gt;&gt;groupWorkbook.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupWorkbook.Parent" xml:space="preserve">
+    <value>tabVassTools</value>
+  </data>
+  <data name="&gt;&gt;groupWorkbook.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabVassTools.Label" xml:space="preserve">
+    <value>VassTools</value>
+  </data>
+  <data name="&gt;&gt;tabVassTools.Name" xml:space="preserve">
+    <value>tabVassTools</value>
+  </data>
+  <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh</value>
-  </metadata>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.Name" xml:space="preserve">
+    <value>VassRibbon.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>VassRibbon</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
