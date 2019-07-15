@@ -192,8 +192,17 @@
   <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <metadata name="openSymbolsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="openSymbolsDialog.Title" xml:space="preserve">
+    <value>Import Symbols File</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>104</value>
   </metadata>
   <data name="&gt;&gt;VassRibbon.OfficeMenu.Name" xml:space="preserve">
     <value>VassRibbon.OfficeMenu</value>
@@ -206,6 +215,12 @@
   </data>
   <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;openSymbolsDialog.Name" xml:space="preserve">
+    <value>openSymbolsDialog</value>
+  </data>
+  <data name="&gt;&gt;openSymbolsDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>VassRibbon</value>

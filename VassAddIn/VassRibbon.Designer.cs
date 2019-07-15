@@ -34,6 +34,7 @@
             this.buttonReadSymbol = this.Factory.CreateRibbonButton();
             this.groupWorkbook = this.Factory.CreateRibbonGroup();
             this.buttonClean = this.Factory.CreateRibbonButton();
+            this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
             this.groupWorkbook.SuspendLayout();
@@ -77,6 +78,10 @@
             this.buttonClean.ShowImage = true;
             this.buttonClean.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonClean_Click);
             // 
+            // openSymbolsDialog
+            // 
+            resources.ApplyResources(this.openSymbolsDialog, "openSymbolsDialog");
+            // 
             // VassRibbon
             // 
             this.Name = "VassRibbon";
@@ -100,6 +105,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadSymbol;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupWorkbook;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonClean;
+        private System.Windows.Forms.OpenFileDialog openSymbolsDialog;
     }
 
     partial class ThisRibbonCollection {

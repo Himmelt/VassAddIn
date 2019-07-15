@@ -6,21 +6,22 @@ using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace VassAddIn {
     public partial class ThisAddIn {
         private void ThisAddIn_Startup(object sender, System.EventArgs e) {
+            Application.DisplayAlerts = false;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e) {
         }
 
         public void ClearWorkBook() {
-            Application.DisplayAlerts = false;
-            Excel.Sheets sheets = Application.ActiveWorkbook.Sheets;
+            Sheets sheets = Application.ActiveWorkbook.Sheets;
             sheets.Add().Name = "29185D52CD5441A";
             foreach (dynamic sheet in sheets) {
-                if (!sheet.Name.Equals("29185D52CD5441A")) {
+                if (sheet.Name != "29185D52CD5441A") {
                     sheets[sheet.Name].Delete();
                 }
             }
@@ -39,5 +40,18 @@ namespace VassAddIn {
         }
 
         #endregion
+    }
+
+    public static class Utils {
+        public static bool contains(Sheets sheets, string name) {
+            bool found = false;
+            foreach (dynamic sheet in sheets) {
+                if (sheet.Name == name) {
+                    found = true;
+                    break;
+                }
+            }
+            return found;
+        }
     }
 }
