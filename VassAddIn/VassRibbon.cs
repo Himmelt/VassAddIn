@@ -29,7 +29,6 @@ namespace VassAddIn {
                     string fileName = openSymbolsDialog.FileName;
                     bool sdf = fileName.EndsWith(".sdf");
                     bool seq = fileName.EndsWith(".seq");
-                    bool asc = fileName.EndsWith(".asc");
                     var reader = new StreamReader(fileName);
 
                     Sheets sheets = workbook.Sheets;
@@ -47,9 +46,9 @@ namespace VassAddIn {
                     String line = "";
                     int row = 1;
                     while ((line = reader.ReadLine()) != null) {
-                        string[] ss = line.Split(',');
+                        string[] ss = line.Split(seq ? '\t' : ',');
                         for (int i = 1; i <= ss.Length; i++) {
-                            worksheet.Cells[row, i].Text = ss[i - 1];
+                            worksheet.Cells[row, i].Value2 = ss[i - 1];
                         }
                         row++;
                     }
