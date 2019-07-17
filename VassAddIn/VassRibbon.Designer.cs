@@ -87,7 +87,6 @@
             this.Name = "VassRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tabVassTools);
-            resources.ApplyResources(this, "$this");
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.VassRibbon_Load);
             this.tabVassTools.ResumeLayout(false);
             this.tabVassTools.PerformLayout();

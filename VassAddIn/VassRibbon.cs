@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,33 +28,39 @@ namespace VassAddIn {
             if (openSymbolsDialog.ShowDialog() == DialogResult.OK) {
                 try {
                     string fileName = openSymbolsDialog.FileName;
-                    bool sdf = fileName.EndsWith(".sdf");
-                    bool seq = fileName.EndsWith(".seq");
                     var reader = new StreamReader(fileName);
-
-                    Sheets sheets = workbook.Sheets;
-                    dynamic sheet = sheets.Add();
-                    try {
-                        sheets["EmptySheet"].Delete();
-                    } catch (Exception) { }
-                    try {
-                        sheets["Symbols"].Delete();
-                    } catch (Exception) { }
-                    sheet.Name = "Symbols";
-
-                    Worksheet worksheet = sheet;
-
+                    Dictionary<int, List<RobEA>> map = new Dictionary<int, List<RobEA>>();
                     String line = "";
-                    int row = 1;
                     while ((line = reader.ReadLine()) != null) {
-                        string[] ss = line.Split(seq ? '\t' : ',');
-                        for (int i = 1; i <= ss.Length; i++) {
-                            worksheet.Cells[row, i].Value2 = ss[i - 1];
+                        string[] ss = line.Split('\t');
+                        if (ss.Length == 4) {
+                            RobEA rob = new RobEA(ss[2], ss[1], ss[3]);
+                            int num = rob.getNum();
+                            if (num != 0) {
+                                if (!map.ContainsKey(num)) map.Add(num, new List<RobEA>());
+                                map[num].Add(rob);
+                            }
                         }
-                        row++;
                     }
                     reader.Close();
 
+                    var sort = from obj in map orderby obj.Key ascending select obj;
+                    foreach (KeyValuePair<int, List<RobEA>> kvp in sort) {
+                        int num = kvp.Key;
+                        string sheetName = num.ToString();
+                        sheetName = sheetName.Insert(sheetName.Length - 1, "R0");
+                        Worksheet worksheet = Utils.createEmptySheet(workbook, sheetName);
+                        List<RobEA> list = kvp.Value;
+                        var query = from rob in list orderby rob.getAddr() ascending select rob;
+                        int row = 1;
+                        foreach (var rob in query) {
+                            worksheet.Cells[row, 1].Value2 = rob.getSignal();
+                            worksheet.Cells[row, 2].Value2 = rob.getAddrText();
+                            worksheet.Cells[row, 3].Value2 = rob.getComment();
+                            row++;
+                        }
+                        worksheet.Columns.AutoFit();
+                    }
                 } catch (Exception ex) {
                     MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
                 }
