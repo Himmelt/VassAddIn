@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security;
-using System.Text;
+using System.Reflection;
+using System.Resources;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
@@ -56,29 +55,50 @@ namespace VassAddIn {
                         Range Cells = worksheet.Cells;
                         List<RobEA> list = kvp.Value;
                         var query = from rob in list orderby rob.getAddr() ascending select rob;
-                        // header
+
+                        worksheet.Columns[1].ColumnWidth = 26;
+                        worksheet.Columns[2].ColumnWidth = 10;
+                        worksheet.Columns[2].HorizontalAlignment = Constants.xlCenter;
+                        worksheet.Columns[3].ColumnWidth = 50;
+                        worksheet.Columns[4].ColumnWidth = 26;
+                        worksheet.Columns[5].ColumnWidth = 10;
+                        worksheet.Columns[5].HorizontalAlignment = Constants.xlCenter;
+                        worksheet.Columns[6].ColumnWidth = 50;
+                        worksheet.Rows.RowHeight = 18;
+
+                        // header1
                         Range range = worksheet.get_Range("A1", "C1");
                         range.Merge();
                         range.Value2 = "PLC >> Rob";
+                        range.Interior.Color = 13561542;
+                        range.Font.Color = -16752640;
+                        range.Font.Bold = true;
+                        range.Borders.Weight = XlBorderWeight.xlMedium;
+
                         range = worksheet.get_Range("D1", "F1");
                         range.Merge();
                         range.Value2 = "Rob >> PLC";
+                        range.Interior.Color = 10283775;
+                        range.Font.Color = -16751460;
+                        range.Font.Bold = true;
+                        range.Borders.Weight = XlBorderWeight.xlMedium;
+
                         range = worksheet.get_Range("A1", "F1");
                         range.HorizontalAlignment = Constants.xlCenter;
                         range.VerticalAlignment = Constants.xlCenter;
-                        range.Rows.RowHeight = 22;
-                        range.Interior.Color = 11921586;
+                        range.Rows.RowHeight = 24;
 
-                        //
-                        Cells[2, 1].Value2 = "符号";
-                        Cells[2, 2].Value2 = "地址";
-                        Cells[2, 3].Value2 = "描述";
-                        Cells[2, 4].Value2 = "符号";
-                        Cells[2, 5].Value2 = "地址";
-                        Cells[2, 6].Value2 = "描述";
+                        Cells[2, 1].Value2 = TextRes.colSymbol;
+                        Cells[2, 2].Value2 = TextRes.colAddress;
+                        Cells[2, 3].Value2 = TextRes.colComment;
+                        Cells[2, 4].Value2 = TextRes.colSymbol;
+                        Cells[2, 5].Value2 = TextRes.colAddress;
+                        Cells[2, 6].Value2 = TextRes.colComment;
                         range = worksheet.get_Range("A2", "F2");
                         range.HorizontalAlignment = Constants.xlCenter;
                         range.VerticalAlignment = Constants.xlCenter;
+                        range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
+                        range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
 
                         int rowLeft = 3;
                         int rowRight = 3;
@@ -100,29 +120,40 @@ namespace VassAddIn {
                         // header2
                         range = worksheet.Range[Cells[rowLeft, 1], Cells[rowLeft, 3]];
                         range.Merge();
-                        range.Value2 = "完成信号";
+                        range.Value2 = TextRes.txtFM;
+                        range.Interior.Color = 13561542;
+                        range.Font.Color = -16752640;
+                        range.Font.Bold = true;
+                        range.Borders.Weight = XlBorderWeight.xlMedium;
+
                         range = worksheet.Range[Cells[rowLeft, 4], Cells[rowLeft, 6]];
                         range.Merge();
-                        range.Value2 = "程序号";
+                        range.Value2 = TextRes.txtFG;
+                        range.Interior.Color = 10283775;
+                        range.Font.Color = -16751460;
+                        range.Font.Bold = true;
+                        range.Borders.Weight = XlBorderWeight.xlMedium;
+
                         range = worksheet.Range[Cells[rowLeft, 1], Cells[rowLeft, 6]];
                         range.HorizontalAlignment = Constants.xlCenter;
                         range.VerticalAlignment = Constants.xlCenter;
-                        range.Rows.RowHeight = 22;
-                        range.Interior.Color = 11921586;
+                        range.Rows.RowHeight = 24;
+                        range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
+                        range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
 
-                        //
-                        Cells[rowLeft + 1, 1].Value2 = "符号";
-                        Cells[rowLeft + 1, 2].Value2 = "地址";
-                        Cells[rowLeft + 1, 3].Value2 = "描述";
-                        Cells[rowLeft + 1, 4].Value2 = "符号";
-                        Cells[rowLeft + 1, 5].Value2 = "地址";
-                        Cells[rowLeft + 1, 6].Value2 = "描述";
+                        Cells[rowLeft + 1, 1].Value2 = TextRes.colSymbol;
+                        Cells[rowLeft + 1, 2].Value2 = TextRes.colAddress;
+                        Cells[rowLeft + 1, 3].Value2 = TextRes.colComment;
+                        Cells[rowLeft + 1, 4].Value2 = TextRes.colSymbol;
+                        Cells[rowLeft + 1, 5].Value2 = TextRes.colAddress;
+                        Cells[rowLeft + 1, 6].Value2 = TextRes.colComment;
                         range = worksheet.Range[Cells[rowLeft + 1, 1], Cells[rowLeft + 1, 6]];
                         range.HorizontalAlignment = Constants.xlCenter;
                         range.VerticalAlignment = Constants.xlCenter;
+                        range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
+                        range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
 
                         rowLeft = rowRight = rowLeft + 2;
-                        //
                         foreach (var rob in query) {
                             if (rob.getType() == SignalType.FM) {
                                 Cells[rowLeft, 1].Value2 = rob.getSignal();
@@ -136,9 +167,18 @@ namespace VassAddIn {
                                 rowRight++;
                             }
                         }
-
-                        // worksheet style
-                        worksheet.Columns.AutoFit();
+                        rowLeft = rowRight = Math.Max(rowLeft, rowRight);
+                        range = worksheet.Range[Cells[1, 1], Cells[rowLeft, 3]];
+                        range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
+                        range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
+                        range = worksheet.Range[Cells[1, 4], Cells[rowLeft, 6]];
+                        range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
+                        range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
+                    }
+                    if (workbook.Sheets.Count > 1) {
+                        try {
+                            workbook.Sheets["EmptySheet"].Delete();
+                        } catch (Exception) { }
                     }
                 } catch (Exception ex) {
                     MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VassAddIn.Properties {
+namespace VassAddIn {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace VassAddIn.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class TextRes {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal TextRes() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace VassAddIn.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VassAddIn.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VassAddIn.TextRes", typeof(TextRes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,51 @@ namespace VassAddIn.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Address 的本地化字符串。
+        /// </summary>
+        internal static string colAddress {
+            get {
+                return ResourceManager.GetString("colAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Comment 的本地化字符串。
+        /// </summary>
+        internal static string colComment {
+            get {
+                return ResourceManager.GetString("colComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Symbol 的本地化字符串。
+        /// </summary>
+        internal static string colSymbol {
+            get {
+                return ResourceManager.GetString("colSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Folge 的本地化字符串。
+        /// </summary>
+        internal static string txtFG {
+            get {
+                return ResourceManager.GetString("txtFG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fertigmeldung 的本地化字符串。
+        /// </summary>
+        internal static string txtFM {
+            get {
+                return ResourceManager.GetString("txtFM", resourceCulture);
             }
         }
     }

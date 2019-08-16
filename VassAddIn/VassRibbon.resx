@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonReadSymbol.Label" xml:space="preserve">
-    <value>Import Symbols</value>
+    <value>Import</value>
   </data>
   <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
     <value>Import Symbols from Symbol Table.</value>
@@ -136,7 +136,7 @@
     <value>0</value>
   </data>
   <data name="groupSymbol.Label" xml:space="preserve">
-    <value>Symbol</value>
+    <value>Rob Interface</value>
   </data>
   <data name="&gt;&gt;groupSymbol.Name" xml:space="preserve">
     <value>groupSymbol</value>

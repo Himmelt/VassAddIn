@@ -117,31 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonReadSymbol.Label" xml:space="preserve">
-    <value>从符号表导入</value>
+  <data name="colAddress" xml:space="preserve">
+    <value>地址</value>
   </data>
-  <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
-    <value>导入 Step7 符号表。</value>
+  <data name="colComment" xml:space="preserve">
+    <value>描述</value>
   </data>
-  <data name="groupSymbol.Label" xml:space="preserve">
-    <value>信号交互</value>
+  <data name="colSymbol" xml:space="preserve">
+    <value>符号</value>
   </data>
-  <data name="buttonClean.Label" xml:space="preserve">
-    <value>清空工作簿</value>
+  <data name="txtFG" xml:space="preserve">
+    <value>程序号</value>
   </data>
-  <data name="buttonClean.ScreenTip" xml:space="preserve">
-    <value>清空并重置工作簿。</value>
-  </data>
-  <data name="groupWorkbook.Label" xml:space="preserve">
-    <value>工作簿</value>
-  </data>
-  <data name="tabVassTools.Label" xml:space="preserve">
-    <value>Vass工具箱</value>
-  </data>
-  <data name="openSymbolsDialog.Filter" xml:space="preserve">
-    <value>SDF 文件|*.sdf</value>
-  </data>
-  <data name="openSymbolsDialog.Title" xml:space="preserve">
-    <value>打开符号表</value>
+  <data name="txtFM" xml:space="preserve">
+    <value>完成信号</value>
   </data>
 </root>
