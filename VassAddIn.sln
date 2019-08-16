@@ -7,10 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VassAddIn", "VassAddIn\Vass
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.All|Any CPU.Build.0 = Release|Any CPU
 		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA9789BE-1D7A-4B3C-A30D-252AE9EADA59}.Release|Any CPU.ActiveCfg = Release|Any CPU

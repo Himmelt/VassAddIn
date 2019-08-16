@@ -196,7 +196,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="openSymbolsDialog.Filter" xml:space="preserve">
-    <value>SEQ File|*.seq</value>
+    <value>SDF File|*.sdf</value>
   </data>
   <data name="openSymbolsDialog.Title" xml:space="preserve">
     <value>Open Symbols File</value>

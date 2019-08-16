@@ -7,7 +7,7 @@ using System.Security;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("VassAddIn")]
-[assembly: AssemblyDescription("Vass Tools for Excel.")]
+[assembly: AssemblyDescription("Vass Tools AddIn for Excel.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SoraWorld")]
 [assembly: AssemblyProduct("VassAddIn")]

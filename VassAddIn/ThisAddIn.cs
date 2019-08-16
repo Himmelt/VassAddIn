@@ -73,15 +73,31 @@ namespace VassAddIn {
         private float address = 0.0F;
         private string signal = "";
         private string comment = "";
-        private static Regex SIGNAL = new Regex(@"M_\d{6}R0\d_([EA]\d{2}(_\S+)?|FM\d)");
+        private SignalType type = SignalType.NONE;
+        private static Regex SIGNAL_E = new Regex(@"M_\d{6}R0\d_(E\d\d(_\S+)?)");
+        private static Regex SIGNAL_A = new Regex(@"M_\d{6}R0\d_(A\d\d(_\S+)?)");
+        private static Regex SIGNAL_FM = new Regex(@"M_\d{6}R0\d_FM[1-8]$");
+        private static Regex SIGNAL_FG = new Regex(@"M_\d{6}R0\dFrgFolg\d\d");
         private static Regex ROB = new Regex(@"\d{6}R0\d");
 
         public RobEA(string signal, string address, string comment) {
-            if (SIGNAL.IsMatch(signal)) {
+            bool isValid = true;
+            if (SIGNAL_E.IsMatch(signal)) {
+                type = SignalType.E;
+            } else if (SIGNAL_A.IsMatch(signal)) {
+                type = SignalType.A;
+            } else if (SIGNAL_FM.IsMatch(signal)) {
+                type = SignalType.FM;
+            } else if (SIGNAL_FG.IsMatch(signal)) {
+                type = SignalType.FG;
+            } else {
+                isValid = false;
+            }
+            if (isValid) {
                 GroupCollection groups = ROB.Match(signal).Groups;
                 if (groups.Count > 0) {
                     string text = groups[0].Value.Replace("R0", "");
-                    this.number = Convert.ToInt32(text);
+                    number = Convert.ToInt32(text);
                     text = address.Replace("M ", "").Trim();
                     this.signal = signal.Trim();
                     this.address = Convert.ToSingle(text);
@@ -109,5 +125,13 @@ namespace VassAddIn {
         public string getComment() {
             return comment;
         }
+
+        public SignalType getType() {
+            return type;
+        }
+    }
+
+    public enum SignalType {
+        E, A, FM, FG, NONE
     }
 }
