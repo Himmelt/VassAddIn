@@ -185,5 +185,14 @@ namespace VassAddIn {
                 }
             }
         }
+
+        private void BtnTransRob_Click(object sender, RibbonControlEventArgs e) {
+            /*Range selection =  application.Selection as Range;
+            if (selection != null) {
+                foreach(dynamic cell in selection.Cells) {
+                    cell.Value2 = cell.Value2;
+                }
+            }*/
+        }
     }
 }

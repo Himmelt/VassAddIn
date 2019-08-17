@@ -118,19 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonReadSymbol.Label" xml:space="preserve">
-    <value>从符号表导入</value>
+    <value>导入 符号表</value>
   </data>
   <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
-    <value>导入 Step7 符号表。</value>
+    <value>从 Step7 符号表导入信号交互表</value>
+  </data>
+  <data name="btnTransRob.Label" xml:space="preserve">
+    <value>快速 翻译</value>
+  </data>
+  <data name="btnTransRob.ScreenTip" xml:space="preserve">
+    <value>翻译选中区域内单元格的内容</value>
   </data>
   <data name="groupSymbol.Label" xml:space="preserve">
-    <value>信号交互</value>
+    <value>机器人信号交互</value>
+  </data>
+  <data name="btnTransSheet.Label" xml:space="preserve">
+    <value>翻译 工作表</value>
+  </data>
+  <data name="btnTransBook.Label" xml:space="preserve">
+    <value>翻译 工作簿</value>
+  </data>
+  <data name="btnShowDic.Label" xml:space="preserve">
+    <value>查看 字典</value>
+  </data>
+  <data name="btnSaveDic.Label" xml:space="preserve">
+    <value>保存 字典</value>
+  </data>
+  <data name="groupTranslate.Label" xml:space="preserve">
+    <value>翻译</value>
   </data>
   <data name="buttonClean.Label" xml:space="preserve">
-    <value>清空工作簿</value>
+    <value>清空 工作簿</value>
   </data>
   <data name="buttonClean.ScreenTip" xml:space="preserve">
-    <value>清空并重置工作簿。</value>
+    <value>清空并重置工作簿</value>
   </data>
   <data name="groupWorkbook.Label" xml:space="preserve">
     <value>工作簿</value>
