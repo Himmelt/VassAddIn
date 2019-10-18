@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnSaveDic.Label" xml:space="preserve">
     <value>Save Dictionary</value>
   </data>
@@ -126,14 +129,17 @@
   <data name="&gt;&gt;groupTranslate.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;openSymbolsDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonReadSymbol.Parent" xml:space="preserve">
+    <value>groupSymbol</value>
   </data>
   <data name="&gt;&gt;groupWorkbook.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;openSymbolsDialog.Name" xml:space="preserve">
     <value>openSymbolsDialog</value>
+  </data>
+  <data name="&gt;&gt;openHardwareCfg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonReadSymbol.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -147,11 +153,23 @@
   <data name="groupSymbol.Label" xml:space="preserve">
     <value>Robot Interface</value>
   </data>
+  <data name="&gt;&gt;openSymbolsDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnImportPNIP.Name" xml:space="preserve">
+    <value>btnImportPNIP</value>
+  </data>
   <data name="tabVassTools.Label" xml:space="preserve">
     <value>VassTools</value>
   </data>
   <data name="groupTranslate.Label" xml:space="preserve">
     <value>Translate</value>
+  </data>
+  <data name="&gt;&gt;openHardwareCfg.Name" xml:space="preserve">
+    <value>openHardwareCfg</value>
+  </data>
+  <data name="btnImportPNIP.Label" xml:space="preserve">
+    <value>Import PN/IP</value>
   </data>
   <data name="&gt;&gt;btnTransRob.Parent" xml:space="preserve">
     <value>groupSymbol</value>
@@ -168,8 +186,14 @@
   <data name="groupWorkbook.Label" xml:space="preserve">
     <value>Workbook</value>
   </data>
+  <data name="&gt;&gt;btnImportPNIP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;buttonReadSymbol.Name" xml:space="preserve">
     <value>buttonReadSymbol</value>
+  </data>
+  <data name="&gt;&gt;groupPNIP.Parent" xml:space="preserve">
+    <value>tabVassTools</value>
   </data>
   <data name="&gt;&gt;btnTransSheet.Name" xml:space="preserve">
     <value>btnTransSheet</value>
@@ -180,7 +204,7 @@
   <data name="&gt;&gt;btnSaveDic.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupSymbol.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupPNIP.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;groupTranslate.Name" xml:space="preserve">
@@ -192,14 +216,23 @@
   <data name="&gt;&gt;btnTransSheet.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="openHardwareCfg.Title" xml:space="preserve">
+    <value>Open Hardware Config</value>
+  </data>
+  <data name="&gt;&gt;btnImportPNIP.Parent" xml:space="preserve">
+    <value>groupPNIP</value>
+  </data>
   <data name="btnShowDic.Label" xml:space="preserve">
     <value>Show Dictionary</value>
   </data>
-  <data name="&gt;&gt;buttonReadSymbol.Parent" xml:space="preserve">
-    <value>groupSymbol</value>
-  </data>
   <data name="&gt;&gt;btnSaveDic.Parent" xml:space="preserve">
     <value>groupTranslate</value>
+  </data>
+  <data name="openHardwareCfg.Filter" xml:space="preserve">
+    <value>CFG File|*.cfg</value>
+  </data>
+  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
+    <value>buttonClean</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -209,6 +242,9 @@
   </data>
   <data name="&gt;&gt;btnTransBook.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="groupPNIP.Label" xml:space="preserve">
+    <value>PN/IP Address</value>
   </data>
   <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
     <value>groupWorkbook</value>
@@ -228,8 +264,8 @@
   <data name="&gt;&gt;btnTransSheet.Parent" xml:space="preserve">
     <value>groupTranslate</value>
   </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;groupSymbol.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;groupSymbol.Name" xml:space="preserve">
     <value>groupSymbol</value>
@@ -261,6 +297,9 @@
   <data name="&gt;&gt;btnSaveDic.Name" xml:space="preserve">
     <value>btnSaveDic</value>
   </data>
+  <data name="&gt;&gt;btnImportPNIP.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonReadSymbol.ScreenTip" xml:space="preserve">
     <value>Import Symbols from Symbol Table.</value>
   </data>
@@ -270,11 +309,14 @@
   <data name="&gt;&gt;VassRibbon.OfficeMenu.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="openSymbolsDialog.Title" xml:space="preserve">
+    <value>Open Symbols File</value>
+  </data>
   <data name="&gt;&gt;buttonClean.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;groupTranslate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonReadSymbol.Label" xml:space="preserve">
     <value>Import</value>
@@ -291,8 +333,8 @@
   <data name="&gt;&gt;groupSymbol.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
-    <value>buttonClean</value>
+  <data name="&gt;&gt;groupPNIP.Name" xml:space="preserve">
+    <value>groupPNIP</value>
   </data>
   <data name="&gt;&gt;tabVassTools.Name" xml:space="preserve">
     <value>tabVassTools</value>
@@ -309,19 +351,22 @@
   <data name="btnTransSheet.Label" xml:space="preserve">
     <value>Translate Current Sheet</value>
   </data>
-  <data name="openSymbolsDialog.Title" xml:space="preserve">
-    <value>Open Symbols File</value>
+  <data name="&gt;&gt;groupPNIP.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>zh</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>108</value>
   </metadata>
   <metadata name="openSymbolsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="openHardwareCfg.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>222, 17</value>
   </metadata>
 </root>

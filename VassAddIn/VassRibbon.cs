@@ -194,5 +194,34 @@ namespace VassAddIn {
                 }
             }*/
         }
+
+        private void btnImportPNIP_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (openHardwareCfg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string fileName = openHardwareCfg.FileName;
+                    var reader = new StreamReader(fileName);
+                    Dictionary<int, string> map = new Dictionary<int, string>();
+                    string line = "";
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] ss = line.Split(new string[] { "\",\"" }, StringSplitOptions.RemoveEmptyEntries);
+                        if (ss.Length == 4)
+                        {
+                            ss[0] = ss[0].Substring(1).Trim();
+                            ss[1] = ss[1].Trim();
+                            ss[3] = ss[3].Substring(0, ss[3].Length - 1).Trim();
+                        }
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
+                }
+            }
+        }
     }
 }
