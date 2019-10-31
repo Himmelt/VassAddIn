@@ -103,6 +103,7 @@
             this.btnImportPNIP.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             resources.ApplyResources(this.btnImportPNIP, "btnImportPNIP");
             this.btnImportPNIP.Name = "btnImportPNIP";
+            this.btnImportPNIP.OfficeImageId = "OrganizationChartLayoutRightHanging";
             this.btnImportPNIP.ShowImage = true;
             this.btnImportPNIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnImportPNIP_Click);
             // 
@@ -184,7 +185,7 @@
             this.btnFeedback.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             resources.ApplyResources(this.btnFeedback, "btnFeedback");
             this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.OfficeImageId = "Feedback";
+            this.btnFeedback.OfficeImageId = "ShapeSmileyFace";
             this.btnFeedback.ShowImage = true;
             // 
             // btnAbout
@@ -192,7 +193,7 @@
             this.btnAbout.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             resources.ApplyResources(this.btnAbout, "btnAbout");
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.OfficeImageId = "About";
+            this.btnAbout.OfficeImageId = "Info";
             this.btnAbout.ShowImage = true;
             // 
             // openSymbolsDialog
