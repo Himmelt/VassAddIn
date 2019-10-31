@@ -162,8 +162,17 @@
   <data name="groupWorkbook.Label" xml:space="preserve">
     <value>工作簿</value>
   </data>
-  <data name="btnTour.Label" xml:space="preserve">
-    <value> </value>
+  <data name="btnHelp.Label" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="btnFeedback.Label" xml:space="preserve">
+    <value>反馈</value>
+  </data>
+  <data name="btnAbout.Label" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="groupAbout.Label" xml:space="preserve">
+    <value>帮助</value>
   </data>
   <data name="tabVassTools.Label" xml:space="preserve">
     <value>Vass工具箱</value>

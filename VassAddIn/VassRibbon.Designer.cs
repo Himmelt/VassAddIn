@@ -43,7 +43,8 @@
             this.groupWorkbook = this.Factory.CreateRibbonGroup();
             this.buttonClean = this.Factory.CreateRibbonButton();
             this.groupAbout = this.Factory.CreateRibbonGroup();
-            this.btnTour = this.Factory.CreateRibbonButton();
+            this.btnHelp = this.Factory.CreateRibbonButton();
+            this.btnFeedback = this.Factory.CreateRibbonButton();
             this.btnAbout = this.Factory.CreateRibbonButton();
             this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
             this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
@@ -163,23 +164,35 @@
             // 
             // groupAbout
             // 
-            this.groupAbout.Items.Add(this.btnTour);
+            this.groupAbout.Items.Add(this.btnHelp);
+            this.groupAbout.Items.Add(this.btnFeedback);
             this.groupAbout.Items.Add(this.btnAbout);
             resources.ApplyResources(this.groupAbout, "groupAbout");
             this.groupAbout.Name = "groupAbout";
             // 
-            // btnTour
+            // btnHelp
             // 
-            this.btnTour.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.btnTour, "btnTour");
-            this.btnTour.Name = "btnTour";
-            this.btnTour.ShowImage = true;
+            this.btnHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.btnHelp, "btnHelp");
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.OfficeImageId = "Help";
+            this.btnHelp.ShowImage = true;
+            this.btnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTour_Click);
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.btnFeedback, "btnFeedback");
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.OfficeImageId = "Feedback";
+            this.btnFeedback.ShowImage = true;
             // 
             // btnAbout
             // 
             this.btnAbout.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             resources.ApplyResources(this.btnAbout, "btnAbout");
             this.btnAbout.Name = "btnAbout";
+            this.btnAbout.OfficeImageId = "About";
             this.btnAbout.ShowImage = true;
             // 
             // openSymbolsDialog
@@ -231,8 +244,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnImportPNIP;
         private System.Windows.Forms.OpenFileDialog openHardwareCfg;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupAbout;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnTour;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAbout;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnFeedback;
     }
 
     partial class ThisRibbonCollection {
