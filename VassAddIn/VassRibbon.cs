@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
@@ -14,6 +15,9 @@ namespace VassAddIn {
 
         private Application application;
 
+        private static Regex DEVICE_LINE = new Regex(@"IOSUBSYSTEM \d+, IOADDRESS \d+, "".+, ""[0-9A-Z-]{22}""");
+        private static Regex DEVICE_ID = new Regex(@"IOADDRESS \d+");
+        private static Regex DEVICE_NAME = new Regex(@"""[0-9A-Z-]{22}""");
         private void VassRibbon_Load(object sender, RibbonUIEventArgs e) {
             application = Globals.ThisAddIn.Application;
         }
@@ -199,20 +203,33 @@ namespace VassAddIn {
         {
             if (openHardwareCfg.ShowDialog() == DialogResult.OK)
             {
+                Dictionary<int, string> map = new Dictionary<int, string>();
                 try
                 {
                     string fileName = openHardwareCfg.FileName;
                     var reader = new StreamReader(fileName);
-                    Dictionary<int, string> map = new Dictionary<int, string>();
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] ss = line.Split(new string[] { "\",\"" }, StringSplitOptions.RemoveEmptyEntries);
-                        if (ss.Length == 4)
+                        if (DEVICE_LINE.IsMatch(line))
                         {
-                            ss[0] = ss[0].Substring(1).Trim();
-                            ss[1] = ss[1].Trim();
-                            ss[3] = ss[3].Substring(0, ss[3].Length - 1).Trim();
+                            int id = -1;
+                            string name = "";
+                            GroupCollection idGroups = DEVICE_ID.Match(line).Groups;
+                            if (idGroups.Count > 0)
+                            {
+                                string text = idGroups[0].Value.Replace("IOADDRESS", "").Trim();
+                                id = Convert.ToInt32(text);
+                            }
+                            GroupCollection nameGroups = DEVICE_NAME.Match(line).Groups;
+                            if (nameGroups.Count > 0)
+                            {
+                                name = nameGroups[0].Value.Replace("\"", "").Trim();
+                            }
+                            if(id>=0 && id<=255 && name.Length == 22)
+                            {
+                                map.Add(id, name);
+                            }
                         }
                     }
                     reader.Close();
@@ -220,6 +237,21 @@ namespace VassAddIn {
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
+                }
+
+                int row = application.ActiveCell.Row;
+                int col = application.ActiveCell.Column;
+
+                Worksheet worksheet = application.ActiveSheet;
+                Range Cells = worksheet.Cells;
+                foreach (var item in map)
+                {
+                    int id = item.Key;
+                    string name = item.Value;
+                    for (int i = 0; i < name.Length; i++)
+                    {
+                        Cells[row + id, col + i].Value2 = name.Substring(i, 1);
+                    }
                 }
             }
         }
