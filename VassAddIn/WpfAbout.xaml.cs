@@ -22,6 +22,7 @@ namespace VassAddIn
     {
         public WpfAbout()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
             InitializeComponent();
         }
 

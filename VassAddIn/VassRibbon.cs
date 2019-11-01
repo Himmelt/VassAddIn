@@ -6,43 +6,54 @@ using System.Reflection;
 using System.Resources;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Interop;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
-namespace VassAddIn {
-    public partial class VassRibbon {
+namespace VassAddIn
+{
+    public partial class VassRibbon
+    {
 
         private Application application;
 
         private static Regex DEVICE_LINE = new Regex(@"IOSUBSYSTEM \d+, IOADDRESS \d+, "".+, ""[0-9A-Z-]{22}""");
         private static Regex DEVICE_ID = new Regex(@"IOADDRESS \d+");
         private static Regex DEVICE_NAME = new Regex(@"""[0-9A-Z-]{22}""");
-        private void VassRibbon_Load(object sender, RibbonUIEventArgs e) {
+        private void VassRibbon_Load(object sender, RibbonUIEventArgs e)
+        {
             application = Globals.ThisAddIn.Application;
         }
 
-        private void ButtonClean_Click(object sender, RibbonControlEventArgs e) {
+        private void ButtonClean_Click(object sender, RibbonControlEventArgs e)
+        {
             Globals.ThisAddIn.ClearWorkBook();
         }
 
-        private void ButtonReadSymbol_Click(object sender, RibbonControlEventArgs e) {
+        private void ButtonReadSymbol_Click(object sender, RibbonControlEventArgs e)
+        {
             Workbook workbook = application.ActiveWorkbook;
-            if (openSymbolsDialog.ShowDialog() == DialogResult.OK) {
-                try {
+            if (openSymbolsDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
                     string fileName = openSymbolsDialog.FileName;
                     var reader = new StreamReader(fileName);
                     Dictionary<int, List<RobEA>> map = new Dictionary<int, List<RobEA>>();
                     string line = "";
-                    while ((line = reader.ReadLine()) != null) {
+                    while ((line = reader.ReadLine()) != null)
+                    {
                         string[] ss = line.Split(new string[] { "\",\"" }, StringSplitOptions.RemoveEmptyEntries);
-                        if (ss.Length == 4) {
+                        if (ss.Length == 4)
+                        {
                             ss[0] = ss[0].Substring(1).Trim();
                             ss[1] = ss[1].Trim();
                             ss[3] = ss[3].Substring(0, ss[3].Length - 1).Trim();
                             RobEA rob = new RobEA(ss[0], ss[1], ss[3]);
                             int num = rob.getNum();
-                            if (num != 0) {
+                            if (num != 0)
+                            {
                                 if (!map.ContainsKey(num)) map.Add(num, new List<RobEA>());
                                 map[num].Add(rob);
                             }
@@ -51,7 +62,8 @@ namespace VassAddIn {
                     reader.Close();
 
                     var sort = from obj in map orderby obj.Key ascending select obj;
-                    foreach (KeyValuePair<int, List<RobEA>> kvp in sort) {
+                    foreach (KeyValuePair<int, List<RobEA>> kvp in sort)
+                    {
                         int num = kvp.Key;
                         string sheetName = num.ToString();
                         sheetName = sheetName.Insert(sheetName.Length - 1, "R0");
@@ -106,13 +118,17 @@ namespace VassAddIn {
 
                         int rowLeft = 3;
                         int rowRight = 3;
-                        foreach (var rob in query) {
-                            if (rob.getType() == SignalType.E) {
+                        foreach (var rob in query)
+                        {
+                            if (rob.getType() == SignalType.E)
+                            {
                                 Cells[rowLeft, 1].Value2 = rob.getSignal();
                                 Cells[rowLeft, 2].Value2 = rob.getAddrText();
                                 Cells[rowLeft, 3].Value2 = rob.getComment();
                                 rowLeft++;
-                            } else if (rob.getType() == SignalType.A) {
+                            }
+                            else if (rob.getType() == SignalType.A)
+                            {
                                 Cells[rowRight, 4].Value2 = rob.getSignal();
                                 Cells[rowRight, 5].Value2 = rob.getAddrText();
                                 Cells[rowRight, 6].Value2 = rob.getComment();
@@ -158,13 +174,17 @@ namespace VassAddIn {
                         range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
 
                         rowLeft = rowRight = rowLeft + 2;
-                        foreach (var rob in query) {
-                            if (rob.getType() == SignalType.FM) {
+                        foreach (var rob in query)
+                        {
+                            if (rob.getType() == SignalType.FM)
+                            {
                                 Cells[rowLeft, 1].Value2 = rob.getSignal();
                                 Cells[rowLeft, 2].Value2 = rob.getAddrText();
                                 Cells[rowLeft, 3].Value2 = rob.getComment();
                                 rowLeft++;
-                            } else if (rob.getType() == SignalType.FG) {
+                            }
+                            else if (rob.getType() == SignalType.FG)
+                            {
                                 Cells[rowRight, 4].Value2 = rob.getSignal();
                                 Cells[rowRight, 5].Value2 = rob.getAddrText();
                                 Cells[rowRight, 6].Value2 = rob.getComment();
@@ -179,18 +199,24 @@ namespace VassAddIn {
                         range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
                         range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
                     }
-                    if (workbook.Sheets.Count > 1) {
-                        try {
+                    if (workbook.Sheets.Count > 1)
+                    {
+                        try
+                        {
                             workbook.Sheets["EmptySheet"].Delete();
-                        } catch (Exception) { }
+                        }
+                        catch (Exception) { }
                     }
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
                 }
             }
         }
 
-        private void BtnTransRob_Click(object sender, RibbonControlEventArgs e) {
+        private void BtnTransRob_Click(object sender, RibbonControlEventArgs e)
+        {
             /*Range selection =  application.Selection as Range;
             if (selection != null) {
                 foreach(dynamic cell in selection.Cells) {
@@ -226,7 +252,7 @@ namespace VassAddIn {
                             {
                                 name = nameGroups[0].Value.Replace("\"", "").Trim();
                             }
-                            if(id>=0 && id<=255 && name.Length == 22)
+                            if (id >= 0 && id <= 255 && name.Length == 22)
                             {
                                 map.Add(id, name);
                             }
@@ -268,8 +294,11 @@ namespace VassAddIn {
         private void btnAbout_Click(object sender, RibbonControlEventArgs e)
         {
             WpfAbout about = new WpfAbout();
-            about.ShowDialog();
-            about.Close();
+            _ = new WindowInteropHelper(about)
+            {
+                Owner = new IntPtr(application.Hwnd)
+            };
+            about.Show();
         }
 
     }
