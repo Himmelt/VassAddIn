@@ -256,9 +256,19 @@ namespace VassAddIn {
             }
         }
 
-        private void btnTour_Click(object sender, RibbonControlEventArgs e)
+        private void btnHelp_Click(object sender, RibbonControlEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.bilibili.com/video/av24511282");
         }
+        private void btnFeedback_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Himmelt/VassAddIn/issues");
+        }
+
+        private void btnAbout_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
+
     }
 }

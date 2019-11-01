@@ -178,7 +178,7 @@
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.OfficeImageId = "Help";
             this.btnHelp.ShowImage = true;
-            this.btnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTour_Click);
+            this.btnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHelp_Click);
             // 
             // btnFeedback
             // 
@@ -187,6 +187,7 @@
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.OfficeImageId = "ShapeSmileyFace";
             this.btnFeedback.ShowImage = true;
+            this.btnFeedback.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnFeedback_Click);
             // 
             // btnAbout
             // 
@@ -195,6 +196,7 @@
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.OfficeImageId = "Info";
             this.btnAbout.ShowImage = true;
+            this.btnAbout.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAbout_Click);
             // 
             // openSymbolsDialog
             // 
