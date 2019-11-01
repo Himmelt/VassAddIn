@@ -267,7 +267,9 @@ namespace VassAddIn {
 
         private void btnAbout_Click(object sender, RibbonControlEventArgs e)
         {
-
+            WpfAbout about = new WpfAbout();
+            about.ShowDialog();
+            about.Close();
         }
 
     }

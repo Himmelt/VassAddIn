@@ -1,0 +1,13 @@
+﻿<Window x:Class="VassAddIn.WpfAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VassAddIn"
+             mc:Ignorable="d" 
+             d:DesignHeight="347.525" d:DesignWidth="574.257" UseLayoutRounding="False" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Width="600" Height="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+    <Grid>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="534,10,0,0" VerticalAlignment="Top" Width="56" Height="27" Click="Button_Click"/>
+
+    </Grid>
+</Window>
