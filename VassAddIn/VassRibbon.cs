@@ -293,12 +293,8 @@ namespace VassAddIn
 
         private void btnAbout_Click(object sender, RibbonControlEventArgs e)
         {
-            WpfAbout about = new WpfAbout();
-            _ = new WindowInteropHelper(about)
-            {
-                Owner = new IntPtr(application.Hwnd)
-            };
-            about.Show();
+            AboutBox about = new AboutBox();
+            about.ShowDialog();
         }
 
     }
