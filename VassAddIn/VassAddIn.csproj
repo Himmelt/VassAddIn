@@ -34,7 +34,7 @@
     <PublishUrl>D:\Downloads\VassAddIn\</PublishUrl>
     <InstallUrl />
     <TargetCulture>zh-chs</TargetCulture>
-    <ApplicationVersion>1.0.1.5</ApplicationVersion>
+    <ApplicationVersion>1.0.1.7</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -267,11 +267,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>VassAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0FD29841C8E098D556DC636D26CD2614727F2B3E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C1C8F6BA26E92BB1B3E49B794848D3558317A54C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>

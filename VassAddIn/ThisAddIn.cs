@@ -69,16 +69,16 @@ namespace VassAddIn {
     }
 
     public class RobEA {
-        private int number = 0;
+        private string number = null;
         private float address = 0.0F;
         private string signal = "";
         private string comment = "";
         private SignalType type = SignalType.NONE;
-        private static Regex SIGNAL_E = new Regex(@"M_\d{6}R0\d_(E\d\d(_\S+)?)");
-        private static Regex SIGNAL_A = new Regex(@"M_\d{6}R0\d_(A\d\d(_\S+)?)");
-        private static Regex SIGNAL_FM = new Regex(@"M_\d{6}R0\d_FM[1-8]$");
-        private static Regex SIGNAL_FG = new Regex(@"M_\d{6}R0\dFrgFolg\d\d");
-        private static Regex ROB = new Regex(@"\d{6}R0\d");
+        private static Regex SIGNAL_E = new Regex(@"M_[A-Z0-9]{6}R0\d_(E\d\d(_\S+)?)");
+        private static Regex SIGNAL_A = new Regex(@"M_[A-Z0-9]{6}R0\d_(A\d\d(_\S+)?)");
+        private static Regex SIGNAL_FM = new Regex(@"M_[A-Z0-9]{6}R0\d_FM[1-8]$");
+        private static Regex SIGNAL_FG = new Regex(@"M_[A-Z0-9]{6}R0\dFrgFolg\d\d");
+        private static Regex ROB = new Regex(@"[A-Z0-9]{6}R0\d");
 
         public RobEA(string signal, string address, string comment) {
             bool isValid = true;
@@ -97,7 +97,7 @@ namespace VassAddIn {
                 GroupCollection groups = ROB.Match(signal).Groups;
                 if (groups.Count > 0) {
                     string text = groups[0].Value.Replace("R0", "");
-                    number = Convert.ToInt32(text);
+                    number = text;// Convert.ToInt32(text);
                     text = address.Replace("M ", "").Trim();
                     this.signal = signal.Trim();
                     this.address = Convert.ToSingle(text);
@@ -106,7 +106,7 @@ namespace VassAddIn {
             }
         }
 
-        public int getNum() {
+        public string getNum() {
             return number;
         }
 

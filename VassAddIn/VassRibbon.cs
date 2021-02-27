@@ -40,7 +40,7 @@ namespace VassAddIn
                 {
                     string fileName = openSymbolsDialog.FileName;
                     var reader = new StreamReader(fileName);
-                    Dictionary<int, List<RobEA>> map = new Dictionary<int, List<RobEA>>();
+                    Dictionary<string, List<RobEA>> map = new Dictionary<string, List<RobEA>>();
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
@@ -51,8 +51,8 @@ namespace VassAddIn
                             ss[1] = ss[1].Trim();
                             ss[3] = ss[3].Substring(0, ss[3].Length - 1).Trim();
                             RobEA rob = new RobEA(ss[0], ss[1], ss[3]);
-                            int num = rob.getNum();
-                            if (num != 0)
+                            string num = rob.getNum();
+                            if (num != null && !num.Equals(""))
                             {
                                 if (!map.ContainsKey(num)) map.Add(num, new List<RobEA>());
                                 map[num].Add(rob);
@@ -62,10 +62,10 @@ namespace VassAddIn
                     reader.Close();
 
                     var sort = from obj in map orderby obj.Key ascending select obj;
-                    foreach (KeyValuePair<int, List<RobEA>> kvp in sort)
+                    foreach (KeyValuePair<string, List<RobEA>> kvp in sort)
                     {
-                        int num = kvp.Key;
-                        string sheetName = num.ToString();
+                        string num = kvp.Key;
+                        string sheetName = kvp.Key; //num.ToString();
                         sheetName = sheetName.Insert(sheetName.Length - 1, "R0");
                         Worksheet worksheet = Utils.createEmptySheet(workbook, sheetName);
                         Range Cells = worksheet.Cells;
