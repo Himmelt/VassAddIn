@@ -48,18 +48,23 @@
             this.btnAbout = this.Factory.CreateRibbonButton();
             this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
             this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.button1 = this.Factory.CreateRibbonButton();
+            this.button2 = this.Factory.CreateRibbonButton();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
             this.groupPNIP.SuspendLayout();
             this.groupTranslate.SuspendLayout();
             this.groupWorkbook.SuspendLayout();
             this.groupAbout.SuspendLayout();
+            this.group1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabVassTools
             // 
             this.tabVassTools.Groups.Add(this.groupSymbol);
             this.tabVassTools.Groups.Add(this.groupPNIP);
+            this.tabVassTools.Groups.Add(this.group1);
             this.tabVassTools.Groups.Add(this.groupTranslate);
             this.tabVassTools.Groups.Add(this.groupWorkbook);
             this.tabVassTools.Groups.Add(this.groupAbout);
@@ -206,12 +211,33 @@
             // 
             resources.ApplyResources(this.openHardwareCfg, "openHardwareCfg");
             // 
+            // group1
+            // 
+            this.group1.Items.Add(this.button1);
+            this.group1.Items.Add(this.button2);
+            resources.ApplyResources(this.group1, "group1");
+            this.group1.Name = "group1";
+            // 
+            // button1
+            // 
+            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.ShowImage = true;
+            // 
+            // button2
+            // 
+            this.button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.OfficeImageId = "FPTableAutoFormat";
+            this.button2.ShowImage = true;
+            // 
             // VassRibbon
             // 
             this.Name = "VassRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tabVassTools);
-            resources.ApplyResources(this, "$this");
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.VassRibbon_Load);
             this.tabVassTools.ResumeLayout(false);
             this.tabVassTools.PerformLayout();
@@ -225,6 +251,8 @@
             this.groupWorkbook.PerformLayout();
             this.groupAbout.ResumeLayout(false);
             this.groupAbout.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -250,6 +278,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAbout;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnFeedback;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
     }
 
     partial class ThisRibbonCollection {
