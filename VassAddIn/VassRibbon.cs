@@ -297,5 +297,10 @@ namespace VassAddIn
             about.ShowDialog();
         }
 
+        private void btnFormatS7G_Click(object sender, RibbonControlEventArgs e)
+        {
+            Worksheet sheet = application.ActiveSheet;
+            
+        }
     }
 }

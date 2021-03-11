@@ -138,6 +138,9 @@
   <data name="groupPNIP.Label" xml:space="preserve">
     <value>PN/IP 地址</value>
   </data>
+  <data name="groupGraph.Label" xml:space="preserve">
+    <value>流程控制</value>
+  </data>
   <data name="btnTransSheet.Label" xml:space="preserve">
     <value>翻译 工作表</value>
   </data>
