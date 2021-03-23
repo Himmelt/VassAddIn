@@ -299,8 +299,7 @@ namespace VassAddIn
 
         private void btnFormatS7G_Click(object sender, RibbonControlEventArgs e)
         {
-            Worksheet sheet = application.ActiveSheet;
-            
+            ThisAddIn.taskPanel.Visible = !ThisAddIn.taskPanel.Visible;
         }
     }
 }
