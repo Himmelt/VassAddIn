@@ -293,8 +293,6 @@ namespace VassAddIn
 
         private void btnAbout_Click(object sender, RibbonControlEventArgs e)
         {
-            AboutBox about = new AboutBox();
-            about.ShowDialog();
         }
 
         private void btnFormatS7G_Click(object sender, RibbonControlEventArgs e)

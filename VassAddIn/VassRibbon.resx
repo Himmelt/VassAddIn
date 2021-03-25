@@ -147,10 +147,16 @@
   <data name="&gt;&gt;buttonReadSymbol.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;btnSaveDic.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;btnFormatS7G.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;groupWorkbook.Parent" xml:space="preserve">
+    <value>tabVassTools</value>
+  </data>
+  <data name="&gt;&gt;groupSymbol.Parent" xml:space="preserve">
     <value>tabVassTools</value>
   </data>
   <data name="btnAbout.Label" xml:space="preserve">
@@ -165,8 +171,8 @@
   <data name="&gt;&gt;btnAbout.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
-    <value>buttonClean</value>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>groupGraph</value>
   </data>
   <data name="&gt;&gt;btnImportPNIP.Name" xml:space="preserve">
     <value>btnImportPNIP</value>
@@ -201,20 +207,14 @@
   <data name="&gt;&gt;btnTransBook.Parent" xml:space="preserve">
     <value>groupTranslate</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>groupGraph</value>
+  <data name="&gt;&gt;groupWorkbook.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;btnTransBook.Name" xml:space="preserve">
     <value>btnTransBook</value>
   </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupWorkbook.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;groupTranslate.Parent" xml:space="preserve">
     <value>tabVassTools</value>
@@ -276,6 +276,9 @@
   <data name="&gt;&gt;btnTransSheet.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="&gt;&gt;buttonClean.Name" xml:space="preserve">
+    <value>buttonClean</value>
+  </data>
   <data name="openHardwareCfg.Title" xml:space="preserve">
     <value>Open Hardware Config</value>
   </data>
@@ -318,9 +321,6 @@
   <data name="&gt;&gt;buttonReadSymbol.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openSymbolsDialog.Filter" xml:space="preserve">
-    <value>SDF File|*.sdf</value>
-  </data>
   <data name="&gt;&gt;groupGraph.Parent" xml:space="preserve">
     <value>tabVassTools</value>
   </data>
@@ -330,6 +330,9 @@
   <data name="groupPNIP.Label" xml:space="preserve">
     <value>PN/IP Address</value>
   </data>
+  <data name="button1.Label" xml:space="preserve">
+    <value>Generate</value>
+  </data>
   <data name="&gt;&gt;buttonClean.Parent" xml:space="preserve">
     <value>groupWorkbook</value>
   </data>
@@ -338,9 +341,6 @@
   </data>
   <data name="&gt;&gt;openHardwareCfg.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -363,8 +363,8 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
-  <data name="button1.Label" xml:space="preserve">
-    <value>Generate</value>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;groupSymbol.Name" xml:space="preserve">
     <value>groupSymbol</value>
@@ -411,8 +411,8 @@
   <data name="&gt;&gt;btnImportPNIP.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;VassRibbon.OfficeMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;groupAbout.Parent" xml:space="preserve">
+    <value>tabVassTools</value>
   </data>
   <data name="buttonClean.ScreenTip" xml:space="preserve">
     <value>Clean the Workbook.</value>
@@ -453,8 +453,8 @@
   <data name="&gt;&gt;tabVassTools.Name" xml:space="preserve">
     <value>tabVassTools</value>
   </data>
-  <data name="&gt;&gt;groupSymbol.Parent" xml:space="preserve">
-    <value>tabVassTools</value>
+  <data name="&gt;&gt;btnSaveDic.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;group1.Name" xml:space="preserve">
     <value>group1</value>
@@ -465,8 +465,8 @@
   <data name="btnFormatS7G.Label" xml:space="preserve">
     <value>格式化</value>
   </data>
-  <data name="&gt;&gt;btnSaveDic.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;VassRibbon.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;buttonReadSymbol.Parent" xml:space="preserve">
     <value>groupSymbol</value>
@@ -474,8 +474,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>VassRibbon</value>
   </data>
-  <data name="&gt;&gt;groupAbout.Parent" xml:space="preserve">
-    <value>tabVassTools</value>
+  <data name="openSymbolsDialog.Filter" xml:space="preserve">
+    <value>SDF File|*.sdf</value>
   </data>
   <data name="&gt;&gt;groupSymbol.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -486,8 +486,8 @@
   <data name="&gt;&gt;buttonClean.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;btnSaveDic.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;tabVassTools.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="group1.Label" xml:space="preserve">
     <value>S7Graph</value>
