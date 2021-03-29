@@ -21,7 +21,8 @@ namespace VassAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             Application.DisplayAlerts = false;
-            taskPanel = this.CustomTaskPanes.Add(new UserControl1(), "XXX");
+            taskPanel = this.CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
+            taskPanel.Width = 450;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
