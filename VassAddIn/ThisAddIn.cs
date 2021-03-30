@@ -22,7 +22,7 @@ namespace VassAddIn
         {
             Application.DisplayAlerts = false;
             taskPanel = this.CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
-            taskPanel.Width = 450;
+            taskPanel.Width = 580;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -95,10 +95,10 @@ namespace VassAddIn
         private string signal = "";
         private string comment = "";
         private SignalType type = SignalType.NONE;
-        private static Regex SIGNAL_E = new Regex(@"M_[A-Z0-9]{6}R0\d_(E\d\d(_\S+)?)");
-        private static Regex SIGNAL_A = new Regex(@"M_[A-Z0-9]{6}R0\d_(A\d\d(_\S+)?)");
-        private static Regex SIGNAL_FM = new Regex(@"M_[A-Z0-9]{6}R0\d_FM[1-8]$");
-        private static Regex SIGNAL_FG = new Regex(@"M_[A-Z0-9]{6}R0\dFrgFolg\d\d");
+        private static Regex SIGNAL_E = new Regex(@"^M_[A-Z0-9]{6}R0\d_(E\d\d(_\S+)?)$");
+        private static Regex SIGNAL_A = new Regex(@"^M_[A-Z0-9]{6}R0\d_(A\d\d(_\S+)?)$");
+        private static Regex SIGNAL_FM = new Regex(@"^M_[A-Z0-9]{6}R0\d_FM[1-8]$");
+        private static Regex SIGNAL_FG = new Regex(@"^M_[A-Z0-9]{6}R0\dFrgFolg\d\d$");
         private static Regex ROB = new Regex(@"[A-Z0-9]{6}R0\d");
 
         public RobEA(string signal, string address, string comment)
