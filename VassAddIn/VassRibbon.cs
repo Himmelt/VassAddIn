@@ -297,7 +297,11 @@ namespace VassAddIn
 
         private void btnFormatS7G_Click(object sender, RibbonControlEventArgs e)
         {
-            ThisAddIn.taskPanel.Visible = !ThisAddIn.taskPanel.Visible;
+        }
+
+        private void nearFract_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.taskPane.Visible = !Globals.ThisAddIn.taskPane.Visible;
         }
     }
 }

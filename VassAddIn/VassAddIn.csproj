@@ -216,11 +216,6 @@
     <Compile Include="CalculateTools.Designer.cs">
       <DependentUpon>CalculateTools.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextRes.zh.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TextRes.zh.resx</DependentUpon>
-    </Compile>
     <Compile Include="VassRibbon.cs">
       <SubType>Component</SubType>
     </Compile>

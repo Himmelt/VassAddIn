@@ -17,12 +17,12 @@ namespace VassAddIn
     public partial class ThisAddIn
     {
 
-        public static CustomTaskPane taskPanel;
+        public CustomTaskPane taskPane;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             Application.DisplayAlerts = false;
-            taskPanel = this.CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
-            taskPanel.Width = 580;
+            taskPane = this.CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
+            taskPane.Width = 580;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
