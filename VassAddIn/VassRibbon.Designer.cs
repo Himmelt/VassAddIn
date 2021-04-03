@@ -35,10 +35,10 @@
             this.groupGraph = this.Factory.CreateRibbonGroup();
             this.groupTranslate = this.Factory.CreateRibbonGroup();
             this.groupWorkbook = this.Factory.CreateRibbonGroup();
+            this.calculatorGroup = this.Factory.CreateRibbonGroup();
             this.groupAbout = this.Factory.CreateRibbonGroup();
             this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
             this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
-            this.calculatorGroup = this.Factory.CreateRibbonGroup();
             this.buttonReadSymbol = this.Factory.CreateRibbonButton();
             this.btnTransRob = this.Factory.CreateRibbonButton();
             this.btnImportPNIP = this.Factory.CreateRibbonButton();
@@ -59,8 +59,8 @@
             this.groupGraph.SuspendLayout();
             this.groupTranslate.SuspendLayout();
             this.groupWorkbook.SuspendLayout();
-            this.groupAbout.SuspendLayout();
             this.calculatorGroup.SuspendLayout();
+            this.groupAbout.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabVassTools
@@ -93,6 +93,7 @@
             // 
             this.groupGraph.Items.Add(this.btnGenerateS7G);
             this.groupGraph.Items.Add(this.btnFormatS7G);
+            resources.ApplyResources(this.groupGraph, "groupGraph");
             this.groupGraph.Name = "groupGraph";
             // 
             // groupTranslate
@@ -110,6 +111,12 @@
             resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
             this.groupWorkbook.Name = "groupWorkbook";
             // 
+            // calculatorGroup
+            // 
+            this.calculatorGroup.Items.Add(this.nearFract);
+            resources.ApplyResources(this.calculatorGroup, "calculatorGroup");
+            this.calculatorGroup.Name = "calculatorGroup";
+            // 
             // groupAbout
             // 
             this.groupAbout.Items.Add(this.btnHelp);
@@ -125,12 +132,6 @@
             // openHardwareCfg
             // 
             resources.ApplyResources(this.openHardwareCfg, "openHardwareCfg");
-            // 
-            // calculatorGroup
-            // 
-            this.calculatorGroup.Items.Add(this.nearFract);
-            resources.ApplyResources(this.calculatorGroup, "calculatorGroup");
-            this.calculatorGroup.Name = "calculatorGroup";
             // 
             // buttonReadSymbol
             // 
@@ -258,6 +259,7 @@
             this.Name = "VassRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tabVassTools);
+            resources.ApplyResources(this, "$this");
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.VassRibbon_Load);
             this.tabVassTools.ResumeLayout(false);
             this.tabVassTools.PerformLayout();
@@ -271,10 +273,10 @@
             this.groupTranslate.PerformLayout();
             this.groupWorkbook.ResumeLayout(false);
             this.groupWorkbook.PerformLayout();
-            this.groupAbout.ResumeLayout(false);
-            this.groupAbout.PerformLayout();
             this.calculatorGroup.ResumeLayout(false);
             this.calculatorGroup.PerformLayout();
+            this.groupAbout.ResumeLayout(false);
+            this.groupAbout.PerformLayout();
             this.ResumeLayout(false);
 
         }

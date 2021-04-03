@@ -17,18 +17,25 @@ namespace VassAddIn
     public partial class ThisAddIn
     {
 
-        public CustomTaskPane taskPane;
+        public static Dictionary<string, CustomTaskPane> taskPanes = new Dictionary<string, CustomTaskPane>();
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            Application.WorkbookActivate += Application_WorkbookActivate;
             Application.DisplayAlerts = false;
-            taskPane = this.CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
-            taskPane.Width = 580;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
         }
-
+        private void Application_WorkbookActivate(Excel.Workbook wb)
+        {
+            if (!taskPanes.ContainsKey(wb.FullName))
+            {
+                CustomTaskPane taskPane = CustomTaskPanes.Add(new CalculateTools(), TextRes.calTools);
+                taskPane.Width = 580;
+                taskPanes.Add(wb.FullName, taskPane);
+            }
+        }
         public void ClearWorkBook()
         {
             Sheets sheets = Application.ActiveWorkbook.Sheets;

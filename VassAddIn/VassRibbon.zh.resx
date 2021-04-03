@@ -138,9 +138,6 @@
   <data name="groupPNIP.Label" xml:space="preserve">
     <value>PN/IP 地址</value>
   </data>
-  <data name="groupGraph.Label" xml:space="preserve">
-    <value>流程控制</value>
-  </data>
   <data name="btnTransSheet.Label" xml:space="preserve">
     <value>翻译 工作表</value>
   </data>
@@ -164,6 +161,12 @@
   </data>
   <data name="groupWorkbook.Label" xml:space="preserve">
     <value>工作簿</value>
+  </data>
+  <data name="nearFract.Label" xml:space="preserve">
+    <value>最趋近   最简比</value>
+  </data>
+  <data name="calculatorGroup.Label" xml:space="preserve">
+    <value>计算工具</value>
   </data>
   <data name="btnHelp.Label" xml:space="preserve">
     <value>帮助</value>

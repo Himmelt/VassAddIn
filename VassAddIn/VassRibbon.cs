@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Tools;
 using Microsoft.Office.Tools.Ribbon;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
@@ -301,7 +302,10 @@ namespace VassAddIn
 
         private void nearFract_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.ThisAddIn.taskPane.Visible = !Globals.ThisAddIn.taskPane.Visible;
+            if (ThisAddIn.taskPanes.TryGetValue(application.ActiveWorkbook.FullName, out CustomTaskPane pane))
+            {
+                pane.Visible = !pane.Visible;
+            }
         }
     }
 }
