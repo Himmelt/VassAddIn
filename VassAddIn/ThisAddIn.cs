@@ -20,12 +20,24 @@ namespace VassAddIn
         public static CustomTaskPane taskPanel;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            if (System.Windows.Application.Current == null)
+            {
+                new App();
+            }
+
+            //Take control of WPF application shutdown
+            System.Windows.Application.Current.ShutdownMode = System.Windows.ShutdownMode.OnExplicitShutdown;
+
             Application.DisplayAlerts = false;
             taskPanel = this.CustomTaskPanes.Add(new UserControl1(), "XXX");
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+            if (System.Windows.Application.Current != null)
+            {
+                System.Windows.Application.Current.Shutdown();
+            }
         }
 
         public void ClearWorkBook()

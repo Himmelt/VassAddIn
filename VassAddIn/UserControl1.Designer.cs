@@ -29,24 +29,42 @@ namespace VassAddIn
         /// </summary>
         private void InitializeComponent()
         {
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
-            // elementHost1
+            // guna2TextBox1
             // 
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elementHost1.Location = new System.Drawing.Point(0, 0);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(533, 482);
-            this.elementHost1.TabIndex = 0;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = new SimplestRatioPanel();
+            this.guna2TextBox1.Animated = true;
+            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.CustomizableEdges.TopLeft = false;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(79, 77);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
+            this.guna2TextBox1.TabIndex = 0;
+            this.guna2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
+            this.guna2TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.guna2TextBox1);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(533, 482);
             this.ResumeLayout(false);
@@ -55,6 +73,6 @@ namespace VassAddIn
 
         #endregion
 
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

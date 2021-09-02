@@ -16,5 +16,22 @@ namespace VassAddIn
         {
             InitializeComponent();
         }
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
