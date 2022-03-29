@@ -9,10 +9,10 @@ using System.Security;
 [assembly: AssemblyTitle("VassAddIn")]
 [assembly: AssemblyDescription("Vass Tools AddIn for Excel.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SoraWorld")]
+[assembly: AssemblyCompany("Himmelt")]
 [assembly: AssemblyProduct("VassAddIn")]
-[assembly: AssemblyCopyright("Copyright © Himmelt 2019-2021")]
-[assembly: AssemblyTrademark("SoraWorld")]
+[assembly: AssemblyCopyright("Copyright © Himmelt 2019-2022")]
+[assembly: AssemblyTrademark("Himmelt")]
 [assembly: AssemblyCulture("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
@@ -33,6 +33,6 @@ using System.Security;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.7")]
-[assembly: AssemblyFileVersion("1.0.1.7")]
+[assembly: AssemblyVersion("1.0.1.8")]
+[assembly: AssemblyFileVersion("1.0.1.8")]
 
