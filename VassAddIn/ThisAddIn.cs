@@ -18,16 +18,16 @@ namespace VassAddIn
     {
 
         public static Dictionary<string, CustomTaskPane> taskPanes = new Dictionary<string, CustomTaskPane>();
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             Application.WorkbookActivate += Application_WorkbookActivate;
             Application.DisplayAlerts = false;
         }
 
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
         }
-        private void Application_WorkbookActivate(Excel.Workbook wb)
+        private void Application_WorkbookActivate(Workbook wb)
         {
             if (!taskPanes.ContainsKey(wb.FullName))
             {
@@ -102,10 +102,10 @@ namespace VassAddIn
         private string signal = "";
         private string comment = "";
         private SignalType type = SignalType.NONE;
-        private static Regex SIGNAL_E = new Regex(@"^M_[A-Z0-9]{6}R0\d_(E\d\d(_\S+)?)$");
-        private static Regex SIGNAL_A = new Regex(@"^M_[A-Z0-9]{6}R0\d_(A\d\d(_\S+)?)$");
+        private static Regex SIGNAL_E = new Regex(@"^M_[A-Z0-9]{6}R0\d_(E\d{2,3}(_\S+)?)(?<!_\d)$");
+        private static Regex SIGNAL_A = new Regex(@"^M_[A-Z0-9]{6}R0\d_(A\d{2,3}(_\S+)?)$");
         private static Regex SIGNAL_FM = new Regex(@"^M_[A-Z0-9]{6}R0\d_FM[1-8]$");
-        private static Regex SIGNAL_FG = new Regex(@"^M_[A-Z0-9]{6}R0\dFrgFolg\d\d$");
+        private static Regex SIGNAL_FG = new Regex(@"^M_[A-Z0-9]{6}R0\dFrgFolg\d{1,2}$");
         private static Regex ROB = new Regex(@"[A-Z0-9]{6}R0\d");
 
         public RobEA(string signal, string address, string comment)
