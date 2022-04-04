@@ -31,28 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VassRibbon));
             this.tabVassTools = this.Factory.CreateRibbonTab();
             this.groupSymbol = this.Factory.CreateRibbonGroup();
-            this.groupPNIP = this.Factory.CreateRibbonGroup();
-            this.groupGraph = this.Factory.CreateRibbonGroup();
-            this.groupTranslate = this.Factory.CreateRibbonGroup();
-            this.groupWorkbook = this.Factory.CreateRibbonGroup();
-            this.calculatorGroup = this.Factory.CreateRibbonGroup();
-            this.groupAbout = this.Factory.CreateRibbonGroup();
-            this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
-            this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
             this.buttonReadSymbol = this.Factory.CreateRibbonButton();
             this.btnTransRob = this.Factory.CreateRibbonButton();
+            this.groupPNIP = this.Factory.CreateRibbonGroup();
             this.btnImportPNIP = this.Factory.CreateRibbonButton();
+            this.groupGraph = this.Factory.CreateRibbonGroup();
             this.btnGenerateS7G = this.Factory.CreateRibbonButton();
             this.btnFormatS7G = this.Factory.CreateRibbonButton();
+            this.groupTranslate = this.Factory.CreateRibbonGroup();
             this.btnTransSheet = this.Factory.CreateRibbonButton();
             this.btnTransBook = this.Factory.CreateRibbonButton();
             this.btnShowDic = this.Factory.CreateRibbonButton();
             this.btnSaveDic = this.Factory.CreateRibbonButton();
+            this.groupWorkbook = this.Factory.CreateRibbonGroup();
             this.buttonClean = this.Factory.CreateRibbonButton();
+            this.calculatorGroup = this.Factory.CreateRibbonGroup();
             this.nearFract = this.Factory.CreateRibbonButton();
+            this.groupAbout = this.Factory.CreateRibbonGroup();
             this.btnHelp = this.Factory.CreateRibbonButton();
             this.btnFeedback = this.Factory.CreateRibbonButton();
             this.btnAbout = this.Factory.CreateRibbonButton();
+            this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
+            this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
             this.groupPNIP.SuspendLayout();
@@ -83,56 +83,6 @@
             resources.ApplyResources(this.groupSymbol, "groupSymbol");
             this.groupSymbol.Name = "groupSymbol";
             // 
-            // groupPNIP
-            // 
-            this.groupPNIP.Items.Add(this.btnImportPNIP);
-            resources.ApplyResources(this.groupPNIP, "groupPNIP");
-            this.groupPNIP.Name = "groupPNIP";
-            // 
-            // groupGraph
-            // 
-            this.groupGraph.Items.Add(this.btnGenerateS7G);
-            this.groupGraph.Items.Add(this.btnFormatS7G);
-            resources.ApplyResources(this.groupGraph, "groupGraph");
-            this.groupGraph.Name = "groupGraph";
-            // 
-            // groupTranslate
-            // 
-            this.groupTranslate.Items.Add(this.btnTransSheet);
-            this.groupTranslate.Items.Add(this.btnTransBook);
-            this.groupTranslate.Items.Add(this.btnShowDic);
-            this.groupTranslate.Items.Add(this.btnSaveDic);
-            resources.ApplyResources(this.groupTranslate, "groupTranslate");
-            this.groupTranslate.Name = "groupTranslate";
-            // 
-            // groupWorkbook
-            // 
-            this.groupWorkbook.Items.Add(this.buttonClean);
-            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
-            this.groupWorkbook.Name = "groupWorkbook";
-            // 
-            // calculatorGroup
-            // 
-            this.calculatorGroup.Items.Add(this.nearFract);
-            resources.ApplyResources(this.calculatorGroup, "calculatorGroup");
-            this.calculatorGroup.Name = "calculatorGroup";
-            // 
-            // groupAbout
-            // 
-            this.groupAbout.Items.Add(this.btnHelp);
-            this.groupAbout.Items.Add(this.btnFeedback);
-            this.groupAbout.Items.Add(this.btnAbout);
-            resources.ApplyResources(this.groupAbout, "groupAbout");
-            this.groupAbout.Name = "groupAbout";
-            // 
-            // openSymbolsDialog
-            // 
-            resources.ApplyResources(this.openSymbolsDialog, "openSymbolsDialog");
-            // 
-            // openHardwareCfg
-            // 
-            resources.ApplyResources(this.openHardwareCfg, "openHardwareCfg");
-            // 
             // buttonReadSymbol
             // 
             this.buttonReadSymbol.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -151,6 +101,12 @@
             this.btnTransRob.ShowImage = true;
             this.btnTransRob.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnTransRob_Click);
             // 
+            // groupPNIP
+            // 
+            this.groupPNIP.Items.Add(this.btnImportPNIP);
+            resources.ApplyResources(this.groupPNIP, "groupPNIP");
+            this.groupPNIP.Name = "groupPNIP";
+            // 
             // btnImportPNIP
             // 
             this.btnImportPNIP.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -159,6 +115,13 @@
             this.btnImportPNIP.OfficeImageId = "OrganizationChartLayoutRightHanging";
             this.btnImportPNIP.ShowImage = true;
             this.btnImportPNIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnImportPNIP_Click);
+            // 
+            // groupGraph
+            // 
+            this.groupGraph.Items.Add(this.btnGenerateS7G);
+            this.groupGraph.Items.Add(this.btnFormatS7G);
+            resources.ApplyResources(this.groupGraph, "groupGraph");
+            this.groupGraph.Name = "groupGraph";
             // 
             // btnGenerateS7G
             // 
@@ -176,6 +139,15 @@
             this.btnFormatS7G.OfficeImageId = "FPTableAutoFormat";
             this.btnFormatS7G.ShowImage = true;
             this.btnFormatS7G.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnFormatS7G_Click);
+            // 
+            // groupTranslate
+            // 
+            this.groupTranslate.Items.Add(this.btnTransSheet);
+            this.groupTranslate.Items.Add(this.btnTransBook);
+            this.groupTranslate.Items.Add(this.btnShowDic);
+            this.groupTranslate.Items.Add(this.btnSaveDic);
+            resources.ApplyResources(this.groupTranslate, "groupTranslate");
+            this.groupTranslate.Name = "groupTranslate";
             // 
             // btnTransSheet
             // 
@@ -209,6 +181,12 @@
             this.btnSaveDic.OfficeImageId = "FunctionsTextInsertGallery";
             this.btnSaveDic.ShowImage = true;
             // 
+            // groupWorkbook
+            // 
+            this.groupWorkbook.Items.Add(this.buttonClean);
+            resources.ApplyResources(this.groupWorkbook, "groupWorkbook");
+            this.groupWorkbook.Name = "groupWorkbook";
+            // 
             // buttonClean
             // 
             this.buttonClean.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -218,6 +196,12 @@
             this.buttonClean.ShowImage = true;
             this.buttonClean.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonClean_Click);
             // 
+            // calculatorGroup
+            // 
+            this.calculatorGroup.Items.Add(this.nearFract);
+            resources.ApplyResources(this.calculatorGroup, "calculatorGroup");
+            this.calculatorGroup.Name = "calculatorGroup";
+            // 
             // nearFract
             // 
             this.nearFract.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -226,6 +210,14 @@
             this.nearFract.OfficeImageId = "Calculator";
             this.nearFract.ShowImage = true;
             this.nearFract.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.nearFract_Click);
+            // 
+            // groupAbout
+            // 
+            this.groupAbout.Items.Add(this.btnHelp);
+            this.groupAbout.Items.Add(this.btnFeedback);
+            this.groupAbout.Items.Add(this.btnAbout);
+            resources.ApplyResources(this.groupAbout, "groupAbout");
+            this.groupAbout.Name = "groupAbout";
             // 
             // btnHelp
             // 
@@ -253,6 +245,14 @@
             this.btnAbout.OfficeImageId = "Info";
             this.btnAbout.ShowImage = true;
             this.btnAbout.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAbout_Click);
+            // 
+            // openSymbolsDialog
+            // 
+            resources.ApplyResources(this.openSymbolsDialog, "openSymbolsDialog");
+            // 
+            // openHardwareCfg
+            // 
+            resources.ApplyResources(this.openHardwareCfg, "openHardwareCfg");
             // 
             // VassRibbon
             // 

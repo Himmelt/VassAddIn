@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Windows.Interop;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools;
 using Microsoft.Office.Tools.Ribbon;
@@ -76,11 +73,11 @@ namespace VassAddIn
                         worksheet.Columns[1].ColumnWidth = 26;
                         worksheet.Columns[2].ColumnWidth = 10;
                         worksheet.Columns[2].HorizontalAlignment = Constants.xlCenter;
-                        worksheet.Columns[3].ColumnWidth = 50;
+                        
                         worksheet.Columns[4].ColumnWidth = 26;
                         worksheet.Columns[5].ColumnWidth = 10;
                         worksheet.Columns[5].HorizontalAlignment = Constants.xlCenter;
-                        worksheet.Columns[6].ColumnWidth = 50;
+                        
                         worksheet.Rows.RowHeight = 18;
 
                         // header1
@@ -199,6 +196,17 @@ namespace VassAddIn
                         range = worksheet.Range[Cells[1, 4], Cells[rowLeft, 6]];
                         range.Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlMedium;
                         range.Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlMedium;
+
+                        worksheet.Columns[3].AutoFit();
+                        worksheet.Columns[6].AutoFit();
+                        if(worksheet.Columns[3].ColumnWidth < 50)
+                        {
+                            worksheet.Columns[3].ColumnWidth = 50;
+                        }
+                        if (worksheet.Columns[6].ColumnWidth < 50)
+                        {
+                            worksheet.Columns[6].ColumnWidth = 50;
+                        }
                     }
                     if (workbook.Sheets.Count > 1)
                     {
