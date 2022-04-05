@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VassRibbon));
             this.tabVassTools = this.Factory.CreateRibbonTab();
             this.groupSymbol = this.Factory.CreateRibbonGroup();
-            this.buttonReadSymbol = this.Factory.CreateRibbonButton();
+            this.buttonReadSdf = this.Factory.CreateRibbonButton();
+            this.buttonReadPaste = this.Factory.CreateRibbonButton();
             this.btnTransRob = this.Factory.CreateRibbonButton();
             this.groupPNIP = this.Factory.CreateRibbonGroup();
             this.btnImportPNIP = this.Factory.CreateRibbonButton();
@@ -78,19 +79,29 @@
             // 
             // groupSymbol
             // 
-            this.groupSymbol.Items.Add(this.buttonReadSymbol);
+            this.groupSymbol.Items.Add(this.buttonReadSdf);
+            this.groupSymbol.Items.Add(this.buttonReadPaste);
             this.groupSymbol.Items.Add(this.btnTransRob);
             resources.ApplyResources(this.groupSymbol, "groupSymbol");
             this.groupSymbol.Name = "groupSymbol";
             // 
-            // buttonReadSymbol
+            // buttonReadSdf
             // 
-            this.buttonReadSymbol.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonReadSymbol, "buttonReadSymbol");
-            this.buttonReadSymbol.Name = "buttonReadSymbol";
-            this.buttonReadSymbol.OfficeImageId = "ImportTextFile";
-            this.buttonReadSymbol.ShowImage = true;
-            this.buttonReadSymbol.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReadSymbol_Click);
+            this.buttonReadSdf.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonReadSdf, "buttonReadSdf");
+            this.buttonReadSdf.Name = "buttonReadSdf";
+            this.buttonReadSdf.OfficeImageId = "ImportTextFile";
+            this.buttonReadSdf.ShowImage = true;
+            this.buttonReadSdf.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReadSdf_Click);
+            // 
+            // buttonReadPaste
+            // 
+            this.buttonReadPaste.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonReadPaste, "buttonReadPaste");
+            this.buttonReadPaste.Name = "buttonReadPaste";
+            this.buttonReadPaste.OfficeImageId = "Paste";
+            this.buttonReadPaste.ShowImage = true;
+            this.buttonReadPaste.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReadPaste_Click);
             // 
             // btnTransRob
             // 
@@ -285,7 +296,7 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tabVassTools;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSymbol;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadSymbol;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadSdf;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupWorkbook;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonClean;
         private System.Windows.Forms.OpenFileDialog openSymbolsDialog;
@@ -307,6 +318,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnFormatS7G;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup calculatorGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton nearFract;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadPaste;
     }
 
     partial class ThisRibbonCollection {
