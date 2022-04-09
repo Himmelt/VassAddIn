@@ -138,11 +138,8 @@
   <data name="groupSymbol.Label" xml:space="preserve">
     <value>机器人信号交互表</value>
   </data>
-  <data name="btnImportPNIP.Label" xml:space="preserve">
-    <value>导入 PN/IP</value>
-  </data>
   <data name="groupPNIP.Label" xml:space="preserve">
-    <value>PN/IP 地址</value>
+    <value>IP 地址分配表</value>
   </data>
   <data name="btnTransSheet.Label" xml:space="preserve">
     <value>翻译 工作表</value>
@@ -200,5 +197,11 @@
   </data>
   <data name="openHardwareCfg.Title" xml:space="preserve">
     <value>导入硬件组态配置</value>
+  </data>
+  <data name="openTopologyCsv.Filter" xml:space="preserve">
+    <value>CSV 文件|*.csv</value>
+  </data>
+  <data name="openTopologyCsv.Title" xml:space="preserve">
+    <value>导入在线拓扑表</value>
   </data>
 </root>

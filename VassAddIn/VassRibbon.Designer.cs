@@ -35,7 +35,8 @@
             this.buttonReadPaste = this.Factory.CreateRibbonButton();
             this.btnTransRob = this.Factory.CreateRibbonButton();
             this.groupPNIP = this.Factory.CreateRibbonGroup();
-            this.btnImportPNIP = this.Factory.CreateRibbonButton();
+            this.btnHwImportIP = this.Factory.CreateRibbonButton();
+            this.btnTopoImportIP = this.Factory.CreateRibbonButton();
             this.groupGraph = this.Factory.CreateRibbonGroup();
             this.btnGenerateS7G = this.Factory.CreateRibbonButton();
             this.btnFormatS7G = this.Factory.CreateRibbonButton();
@@ -54,6 +55,7 @@
             this.btnAbout = this.Factory.CreateRibbonButton();
             this.openSymbolsDialog = new System.Windows.Forms.OpenFileDialog();
             this.openHardwareCfg = new System.Windows.Forms.OpenFileDialog();
+            this.openTopologyCsv = new System.Windows.Forms.OpenFileDialog();
             this.tabVassTools.SuspendLayout();
             this.groupSymbol.SuspendLayout();
             this.groupPNIP.SuspendLayout();
@@ -114,18 +116,28 @@
             // 
             // groupPNIP
             // 
-            this.groupPNIP.Items.Add(this.btnImportPNIP);
+            this.groupPNIP.Items.Add(this.btnHwImportIP);
+            this.groupPNIP.Items.Add(this.btnTopoImportIP);
             resources.ApplyResources(this.groupPNIP, "groupPNIP");
             this.groupPNIP.Name = "groupPNIP";
             // 
-            // btnImportPNIP
+            // btnHwImportIP
             // 
-            this.btnImportPNIP.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.btnImportPNIP, "btnImportPNIP");
-            this.btnImportPNIP.Name = "btnImportPNIP";
-            this.btnImportPNIP.OfficeImageId = "OrganizationChartLayoutRightHanging";
-            this.btnImportPNIP.ShowImage = true;
-            this.btnImportPNIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnImportPNIP_Click);
+            this.btnHwImportIP.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.btnHwImportIP, "btnHwImportIP");
+            this.btnHwImportIP.Name = "btnHwImportIP";
+            this.btnHwImportIP.OfficeImageId = "OrganizationChartLayoutRightHanging";
+            this.btnHwImportIP.ShowImage = true;
+            this.btnHwImportIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHwImportIP_Click);
+            // 
+            // btnTopoImportIP
+            // 
+            this.btnTopoImportIP.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.btnTopoImportIP, "btnTopoImportIP");
+            this.btnTopoImportIP.Name = "btnTopoImportIP";
+            this.btnTopoImportIP.OfficeImageId = "OrganizationChartLayoutRightHanging";
+            this.btnTopoImportIP.ShowImage = true;
+            this.btnTopoImportIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTopoImportIP_Click);
             // 
             // groupGraph
             // 
@@ -265,6 +277,10 @@
             // 
             resources.ApplyResources(this.openHardwareCfg, "openHardwareCfg");
             // 
+            // openTopologyCsv
+            // 
+            resources.ApplyResources(this.openTopologyCsv, "openTopologyCsv");
+            // 
             // VassRibbon
             // 
             this.Name = "VassRibbon";
@@ -307,7 +323,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnShowDic;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSaveDic;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupPNIP;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnImportPNIP;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHwImportIP;
         private System.Windows.Forms.OpenFileDialog openHardwareCfg;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupAbout;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHelp;
@@ -319,6 +335,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup calculatorGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton nearFract;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadPaste;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnTopoImportIP;
+        private System.Windows.Forms.OpenFileDialog openTopologyCsv;
     }
 
     partial class ThisRibbonCollection {

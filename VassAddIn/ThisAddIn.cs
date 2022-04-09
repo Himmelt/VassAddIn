@@ -171,6 +171,26 @@ namespace VassAddIn
         }
     }
 
+    public class IpName
+    {
+        public string name;
+        public int ip_1, ip_2, ip_3, ip_4;
+
+        public IpName(string name, int ip_1, int ip_2, int ip_3, int ip_4)
+        {
+            this.name = name;
+            this.ip_1 = ip_1;
+            this.ip_2 = ip_2;
+            this.ip_3 = ip_3;
+            this.ip_4 = ip_4;
+        }
+
+        public bool isValid(int ip_1, int ip_2, int ip_3)
+        {
+            return name.Length == 22 && this.ip_1 == ip_1 && this.ip_2 == ip_2 && this.ip_3 == ip_3 && ip_4 > 0 && ip_4 < 255;
+        }
+    }
+
     public enum SignalType
     {
         E, A, FM, FG, NONE

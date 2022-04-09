@@ -16,9 +16,11 @@ namespace VassAddIn
 
         private Application application;
 
-        private static Regex DEVICE_LINE = new Regex(@"IOSUBSYSTEM \d+, IOADDRESS \d+, "".+, ""[0-9A-Z-]{22}""");
-        private static Regex DEVICE_ID = new Regex(@"IOADDRESS \d+");
-        private static Regex DEVICE_NAME = new Regex(@"""[0-9A-Z-]{22}""");
+        private static Regex HW_DEVICE_LINE = new Regex(@"IOSUBSYSTEM \d+, IOADDRESS \d+, "".+, ""[0-9A-Z-]{22}""");
+        private static Regex HW_DEVICE_ID = new Regex(@"IOADDRESS \d+");
+        private static Regex HW_DEVICE_NAME = new Regex(@"[0-9A-Za-z-]{22}");
+        private static Regex HW_IP = new Regex(@"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}");
+
         private void VassRibbon_Load(object sender, RibbonUIEventArgs e)
         {
             application = Globals.ThisAddIn.Application;
@@ -55,7 +57,8 @@ namespace VassAddIn
             }*/
         }
 
-        private void btnImportPNIP_Click(object sender, RibbonControlEventArgs e)
+
+        private void btnHwImportIP_Click(object sender, RibbonControlEventArgs e)
         {
             if (openHardwareCfg.ShowDialog() == DialogResult.OK)
             {
@@ -67,17 +70,17 @@ namespace VassAddIn
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (DEVICE_LINE.IsMatch(line))
+                        if (HW_DEVICE_LINE.IsMatch(line))
                         {
                             int id = -1;
                             string name = "";
-                            GroupCollection idGroups = DEVICE_ID.Match(line).Groups;
+                            GroupCollection idGroups = HW_DEVICE_ID.Match(line).Groups;
                             if (idGroups.Count > 0)
                             {
                                 string text = idGroups[0].Value.Replace("IOADDRESS", "").Trim();
                                 id = Convert.ToInt32(text);
                             }
-                            GroupCollection nameGroups = DEVICE_NAME.Match(line).Groups;
+                            GroupCollection nameGroups = HW_DEVICE_NAME.Match(line).Groups;
                             if (nameGroups.Count > 0)
                             {
                                 name = nameGroups[0].Value.Replace("\"", "").Trim();
@@ -103,11 +106,86 @@ namespace VassAddIn
                 foreach (var item in map)
                 {
                     int id = item.Key;
-                    string name = item.Value;
+                    string name = item.Value.ToUpper();
                     for (int i = 0; i < name.Length; i++)
                     {
                         Cells[row + id, col + i].Value2 = name.Substring(i, 1);
                     }
+                }
+            }
+        }
+
+        private void btnTopoImportIP_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (openTopologyCsv.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string fileName = openTopologyCsv.FileName;
+                    var reader = new StreamReader(fileName);
+
+                    Worksheet worksheet = application.ActiveSheet;
+                    Range Cells = worksheet.Cells;
+
+                    int theIp_1 = Convert.ToInt32(Cells[7, 4].Value2);
+                    int theIp_2 = Convert.ToInt32(Cells[7, 6].Value2);
+                    int theIp_3 = Convert.ToInt32(Cells[7, 8].Value2);
+
+                    string line = "";
+                    Dictionary<int, IpName> map = new Dictionary<int, IpName>();
+
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] ss = line.Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries);
+                        IpName ipName = new IpName("", -1, -1, -1, -1);
+                        foreach (string s in ss)
+                        {
+                            if (HW_DEVICE_NAME.IsMatch(s))
+                            {
+                                ipName.name = s.ToUpper();
+                            }
+                            else if (HW_IP.IsMatch(s))
+                            {
+                                string[] ips = s.Split(new string[] { "." }, StringSplitOptions.None);
+                                ipName.ip_1 = Convert.ToInt32(ips[0]);
+                                ipName.ip_2 = Convert.ToInt32(ips[1]);
+                                ipName.ip_3 = Convert.ToInt32(ips[2]);
+                                ipName.ip_4 = Convert.ToInt32(ips[3]);
+                            }
+                        }
+                        if (ipName.isValid(theIp_1, theIp_2, theIp_3))
+                        {
+                            try
+                            {
+                                map.Add(ipName.ip_4, ipName);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error at IP address : {ipName.ip_4}");
+                                MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
+                            }
+                        }
+                    }
+
+                    reader.Close();
+
+                    foreach (var item in map)
+                    {
+                        int id = item.Key;
+                        string name = item.Value.name;
+                        for (int i = 0; i < name.Length; i++)
+                        {
+                            Cells[7 + id, 12 + i].Value2 = name.Substring(i, 1);
+                        }
+                        Cells[7 + id, 4].Value2 = item.Value.ip_1;
+                        Cells[7 + id, 6].Value2 = item.Value.ip_2;
+                        Cells[7 + id, 8].Value2 = item.Value.ip_3;
+                        Cells[7 + id, 10].Value2 = item.Value.ip_4;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error message: {ex.Message}\n" + $"Details:\n{ex.StackTrace}");
                 }
             }
         }
@@ -345,5 +423,6 @@ namespace VassAddIn
                 catch (Exception) { }
             }
         }
+
     }
 }
