@@ -424,5 +424,36 @@ namespace VassAddIn
             }
         }
 
+        private void btnSymbolsOrder_Click(object sender, RibbonControlEventArgs e)
+        {
+            Worksheet worksheet = application.ActiveSheet;
+            var selection = application.Selection;
+            if (selection is Range range)
+            {
+                try
+                {
+                    Range cells = range.Columns[1].Cells;
+                    string start = cells[1].Value2;
+                    start = start.Trim();
+                    string head = start.Substring(0, 1);
+
+                    int address = (int)(Convert.ToSingle(start.Remove(0, 1).Trim()) * 10);
+                    int count = cells.Count;
+                    for (int i = 1; i <= count; i++)
+                    {
+                        int m = address % 10;
+                        if (m == 8)
+                        {
+                            address += 2;
+                        }
+                        cells[i].Value2 = head + "    " + string.Format("{0:F1}", address / 10F);
+                        address++;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
     }
 }

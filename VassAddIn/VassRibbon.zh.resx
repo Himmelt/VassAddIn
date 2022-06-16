@@ -141,6 +141,9 @@
   <data name="groupPNIP.Label" xml:space="preserve">
     <value>IP 地址分配表</value>
   </data>
+  <data name="btnSymbolsOrder.Label" xml:space="preserve">
+    <value>地址 排序</value>
+  </data>
   <data name="btnTransSheet.Label" xml:space="preserve">
     <value>翻译 工作表</value>
   </data>

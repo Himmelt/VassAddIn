@@ -40,6 +40,7 @@
             this.groupGraph = this.Factory.CreateRibbonGroup();
             this.btnGenerateS7G = this.Factory.CreateRibbonButton();
             this.btnFormatS7G = this.Factory.CreateRibbonButton();
+            this.btnSymbolsOrder = this.Factory.CreateRibbonButton();
             this.groupTranslate = this.Factory.CreateRibbonGroup();
             this.btnTransSheet = this.Factory.CreateRibbonButton();
             this.btnTransBook = this.Factory.CreateRibbonButton();
@@ -143,6 +144,7 @@
             // 
             this.groupGraph.Items.Add(this.btnGenerateS7G);
             this.groupGraph.Items.Add(this.btnFormatS7G);
+            this.groupGraph.Items.Add(this.btnSymbolsOrder);
             resources.ApplyResources(this.groupGraph, "groupGraph");
             this.groupGraph.Name = "groupGraph";
             // 
@@ -162,6 +164,15 @@
             this.btnFormatS7G.OfficeImageId = "FPTableAutoFormat";
             this.btnFormatS7G.ShowImage = true;
             this.btnFormatS7G.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnFormatS7G_Click);
+            // 
+            // btnSymbolsOrder
+            // 
+            this.btnSymbolsOrder.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.btnSymbolsOrder, "btnSymbolsOrder");
+            this.btnSymbolsOrder.Name = "btnSymbolsOrder";
+            this.btnSymbolsOrder.OfficeImageId = "SortUp";
+            this.btnSymbolsOrder.ShowImage = true;
+            this.btnSymbolsOrder.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSymbolsOrder_Click);
             // 
             // groupTranslate
             // 
@@ -337,6 +348,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReadPaste;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnTopoImportIP;
         private System.Windows.Forms.OpenFileDialog openTopologyCsv;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSymbolsOrder;
     }
 
     partial class ThisRibbonCollection {
